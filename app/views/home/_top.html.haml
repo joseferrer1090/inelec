@@ -1,0 +1,27 @@
+%header#masthead.site-header.site-header-fixed-top
+  %nav#siteHeaderNavbar.site-header-navbar.navbar.navbar-lg.navbar-fixed-top.navbar-bg-from-transparent.navbar-fg-from-light.navbar-default
+    .container
+      .row
+        .navbar-header
+          %button.navbar-toggle{"data-target" => ".navbar-main-collapse", "data-toggle" => "collapse", :type => "button"}
+            %i.fa.fa-bars
+          %a.navbar-brand.page-scroll{:href => "#page-top"}
+            =image_tag('logo/logo.png', class:'img-responsive', :style => "width: 45%;")
+
+        .collapse.navbar-collapse.navbar-main-collapse.navbar-right
+          %ul.nav.navbar-nav
+            %li.active
+              %a.page-scroll{:href => "#main-banner"} Inicio
+            %li
+              %a.page-scroll{:href => "#section-about"} Nosotros
+            %li
+              %a.page-scroll{:href => "#section-speaker"} Inelec
+            %li
+              %a.page-scroll{:href => "#section-gallery"} Catalogo
+            %li
+              %a.page-scroll{:href => "#section-contact"} Contactenos
+            %li
+              %a{:href => "#"} Login
+          .navbar-btn.navbar-right
+            %a.page-scroll.btn.btn-feature.navbar-link{:href => "#section-contact"} +57 (1) 622 7304
+

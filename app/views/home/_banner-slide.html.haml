@@ -1,0 +1,31 @@
+%link{:href => "/css/slider-new.css"}
+%section#main-banner{:style => "margin-top: 80px;"}
+  #carousel-example-generic.carousel.slide
+    %ol.carousel-indicators
+      %li.active{"data-slide-to" => "0", "data-target" => "#carousel-example-generic"}
+      %li{"data-slide-to" => "1", "data-target" => "#carousel-example-generic"}
+      %li{"data-slide-to" => "2", "data-target" => "#carousel-example-generic"}
+    / Wrapper for slides
+    .carousel-inner{:role => "listbox"}
+      / First slide
+      .item.active.deepskyblue
+        .carousel-caption
+          %h3{"data-animation" => "animated bounceInLeft"}
+            This is the caption for slide 1
+            %br
+            %button.btn.btn-default.btn-lg{"data-animation" => "animated zoomInRight"} Ir
+      .item.deepskyblue
+        .carousel-caption
+          %h3{"data-animation" => "animated bounceInUp"}
+            This is the caption for slide 2%
+            %br
+            %button.btn.btn-default.btn-lg{"data-animation" => "animated zoomInRight"} Ir
+
+      .item.deepskyblue
+        .carousel-caption
+          %h3{"data-animation" => "animated flipInX"}
+            This is the caption for slide 3
+          %button.btn.btn-default.btn-lg{"data-animation" => "animated lightSpeedIn"} Ir
+
+
+

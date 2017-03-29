@@ -1,0 +1,38 @@
+%section#section-about.section-padding
+  .container
+    .row
+      .col-md-4.col-sm-4.col-lg-4
+        .about-block
+          = image_tag('about/about-img1.jpg', class:'img-responsive')
+          .about-info
+            %h3 Potencia
+            %p{:style => "text-align: justify !important;"} Soluciones de Ingeniería para sistemas de arranque y control de motores eléctricos y procesos industriales asociados, en baja y media tensión.
+            %a.read-more{:href => "#"} + Mas
+      .col-md-4.col-sm-4.col-lg-4
+        .about-block
+          = image_tag('about/about-img2.jpg', class:'img-responsive')
+          /%img.img-responsive{:alt => "", :src => "assets/img/about/about-img1.jpg"}/
+          .about-info
+            %h3 Seguridad
+            %p{:style => "text-align: justify !important;"} Nuestras Cámaras Térmicas para protección interna y externa de instalaciones y facilidades industriales, brindan una solución efectiva a las dificultades de visibilidad diurna y nocturna.
+            %a.read-more{:href => "#"} + Mas
+      .col-md-4.col-sm-4.col-lg-4
+        .about-block
+          = image_tag('about/about-img4.jpg', class:'img-responsive')
+          /%img.img-responsive{:alt => "", :src => "assets/img/about/about-img4.jpg"}/
+          .about-info
+            %h3 Servicio
+            %p{:style => "text-align: justify !important;"} Serivicios de precomisionamiento y comisionamiento de Arrancadores suaves en baja y media tensión.
+            %a.read-more{:href => "#"} + Mas
+  .container
+    .about-desc
+      .row
+        .col-md-9.col-sm-7.hidden-sm
+          .about-intro
+            %h4.timetitle Marzo 2017
+            %h2 Consulta o agenta una cita con nuestros Expertos.
+        .col-md-3.col-sm-5
+          %br
+          .about-btn
+            %a.btn.btn-feature{:href => "#", "data-toggle" => "modal", "data-target" => "#myModal"} Agenda tu cita
+=render('modal_consult')

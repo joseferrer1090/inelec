@@ -1,0 +1,45 @@
+%section#section-contact.section-padding
+  .container
+    .row
+      .col-md-12
+        .section-heading.text-center
+          %h2 Contactanos
+          %p Porque es importante para nosotros brindare un excelente servicio
+
+    .row
+      .col-md-4
+        %ul.contact-info
+          %li.info-block
+            .icon-block
+              %i.icon.icon-mobile
+            %h4 Telefonos
+            %p +57 (1) 622 7304
+            %p PBX: +57 (1) 622 7335
+          %li.info-block
+            .icon-block
+              %i.icon.icon-envelope
+            %h4 email
+            %p info@inelec.co
+            //%p www.inelec.co
+          %li.info-block
+            .icon-block
+              %i.icon.icon-map
+            %h4 Bogota D.C, Colombia
+            %p Calle 94a Nº 13 - 91 of 204
+      .col-md-8
+        %form#contact-form{:action => "#", :method => "post", :role => "form"}
+          .col-md-6.col-sm-12
+            #name-field.form-group
+              %input#form-name.form-control.contact-form-field.cffield-upper{:name => "fname", :placeholder => "Nombre", :required => "", :type => "text"}/
+          .col-md-6.col-sm-12
+            #email-field.form-group
+              %input#form-email.form-control.contact-form-field.cffield-upper{:name => "femail", :placeholder => "Correo electronico", :required => "", :type => "email"}/
+          .col-md-12.col-sm-12
+            #subject-field.form-group
+              %input#form-subject.form-control.contact-form-field.cffield-upper{:name => "fsubject", :placeholder => "Asunto", :required => "", :type => "text"}/
+          .col-md-12
+            #message-field.form-group.form-text.text-center
+              %textarea#form-message.form-control.contact-form-field{:cols => "30", :name => "fmessage", :placeholder => "Mensaje", :required => "", :rows => "6"}
+          .col-md-12.text-center
+            %button.btn.btn-primary.feature{:type => "submit"} Enviar
+

@@ -1,0 +1,59 @@
+%section#section-sponsors
+  .container-fluid
+    .row
+      .col-md-6.col-md-offset-3{:style => "margin-top: -91px !important;"}
+        .section-heading.text-center.wow.fadeInUp
+          %h2 Nuestros Aliados
+        .row
+          .col-md-4.col-sm-4.wow.fadeInUp{"data-wow-delay" => ".2s"}
+            .sponsor
+              %a{:href => "http://new.abb.com/", "target" => "_blank"}
+                = image_tag('Clientes/abb.png', class:"img-responsive center-block")
+                /%img.img-responsive.center-block{:alt => "", :src => "assets/img/client/partner_01.png"}
+          .col-md-4.col-sm-4.wow.fadeInUp{"data-wow-delay" => ".4s"}
+            .sponsor
+              %a{:href => "www.solcon.com/", "target" => "_blank"}
+                = image_tag('Clientes/solcon.png', class:'img-responsive center-block')
+                /%img.img-responsive.center-block{:alt => "", :src => "assets/img/client/partner_02.png"}
+          .col-md-4.col-sm-4.wow.fadeInUp{"data-wow-delay" => ".6s"}
+            .sponsor
+              %a{:href => "http://www.flir.com.mx/home/", "target" => "_blank"}
+                = image_tag('Clientes/flir.png', class:'img-responsive center-block')
+                /%img.img-responsive.center-block{:alt => "", :src => "assets/img/client/partner_03.png"}
+        .row
+          .col-md-4.col-sm-4.wow.fadeInUp{"data-wow-delay" => ".4s"}
+            .sponsor
+              %a{:href => "https://azz.com/", "target" => "_blank"}
+              = image_tag('Clientes/azz.png', class:'img-responsive center-block')
+              /%img.img-responsive.center-block{:alt => "", :src => "assets/img/client/partner_02.png"}
+          .col-md-4.col-sm-4.wow.fadeInUp{"data-wow-delay" => ".6s"}
+            .sponsor
+              %a{:href => "https://www.philamixers.com/", "target" => "_blank"}
+              =image_tag('Clientes/phila.png', class:'img-responsive center-block')
+              /%img.img-responsive.center-block{:alt => "", :src => "assets/img/client/partner_03.png"}
+          .col-md-4.col-sm-4.wow.fadeInUp{"data-wow-delay" => ".2s"}
+            .sponsor
+              %a{:href => "www.benshaw.com/", "target" => "_blank"}
+              = image_tag('Clientes/benshaw.png', class:'img-responsive center-block')
+              /%img.img-responsive.center-block{:alt => "", :src => "assets/img/client/partner_01.png"}
+%section#section-gallery.section.section-padding
+  .container-fluid
+    .row
+      .col-md-12
+        .section-heading.text-center.wow.fadeInUp.animated{:style => "visibility: visible;"}
+          %h2 Envento y Galeria
+          %p Lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem
+    .row
+      .loop.owl-carousel.owl-theme.owl.center.owl-loaded
+        %div
+          = image_tag('gallery/img1.jpg', class:'img-responsive')
+        %div
+          = image_tag('gallery/img2.jpg', class:'img-responsive')
+        %div
+          = image_tag('gallery/img3.jpg', class:'img-responsive')
+        %div
+          = image_tag('gallery/img2.jpg', class:'img-responsive')
+        %div
+          = image_tag('gallery/img1.jpg', class:'img-responsive')
+        %div
+          = image_tag('gallery/img3.jpg', class:'img-responsive')

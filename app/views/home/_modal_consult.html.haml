@@ -1,0 +1,52 @@
+#myModal.modal.fade{:role => "dialog", :tabindex => "-1"}
+  .modal-dialog.modal-lg{:role => "document"}
+    .modal-content
+      .modal-header
+        %button.close{"aria-label" => "Close", "data-dismiss" => "modal", :type => "button"}
+          %span{"aria-hidden" => "true"} ×
+        %h4.modal-title.text-center Inelec International SAS
+      .modal-body
+        %p.text-center
+          Es importante Ayudarte a resolver tu problema
+        %form{"role" => "form"}
+          .row
+            .col-md-12
+              %label{"name" => "nombre"} Nombre o Empresa
+              %input.form-control{:type => "text"}
+              %br
+            .col-md-12
+              %label{"name" => "asunto"} Asunto
+              %textarea.form-control{:placeholder => "Describe el problema"}
+              %br
+            .col-md-12
+              .row
+                .col-md-4
+                  %label Dia
+                  %select.form-control
+                    %option 1
+                    %option 2
+                    %option 3
+                .col-md-4
+                  %label Mes
+                  %select.form-control
+                    %option Enero
+                    %option Febrero
+                    %option Marzo
+                .col-md-4
+                  %label Año
+                  %select.form-control
+                    %option 2017
+                    %option 2018
+                    %option 2019
+              %br
+            .col-md-6
+              %label{"name" => "email"} Correo
+              %input.form-control{:type => "text"}
+            .col-md-6
+              %label{"name" => "Telefono"} Telefono
+              %input.form-control{:type => "text"}
+
+      .modal-footer
+        %button.btn.btn-default{"data-dismiss" => "modal", :type => "button"} Cerrar
+        %button.btn.btn-primary{:type => "button"} Registrar Cita
+

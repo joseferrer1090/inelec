@@ -1,0 +1,44 @@
+%nav#app-navbar.navbar.navbar-inverse.navbar-fixed-top.primary
+  .navbar-header
+    %button#menubar-toggle-btn.navbar-toggle.visible-xs-inline-block.navbar-toggle-left.hamburger.hamburger--collapse.js-hamburger{:type => "button"}
+      %span.sr-only Toggle navigation
+      %span.hamburger-box
+        %span.hamburger-inner
+    %button.navbar-toggle.navbar-toggle-right.collapsed{"aria-expanded" => "false", "data-target" => "#app-navbar-collapse", "data-toggle" => "collapse", :type => "button"}
+      %span.sr-only Toggle navigation
+      %span.fa.fa-plus
+
+    %a.navbar-brand{:href => ""}
+      %span.brand-icon
+        /%i.fa.fa-gg
+        %span.brand-name Inelec SAS
+  .navbar-container.container-fluid
+    #app-navbar-collapse.collapse.navbar-collapse
+      %ul.nav.navbar-toolbar.navbar-toolbar-left.navbar-left
+        /%li.hidden-float.hidden-menubar-top
+        /  %a#menubar-fold-btn.hamburger.hamburger--arrowalt.is-active.js-hamburger{:href => "javascript:void(0)", :role => "button"}
+        /    %span.hamburger-box
+        /      %span.hamburger-inner
+        %li
+          %h5.page-title.hidden-menubar-top.hidden-float CRM | Inelec International SAS
+      %ul.nav.navbar-toolbar.navbar-toolbar-right.navbar-right
+
+
+        %li.dropdown
+          %a.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "javascript:void(0)", :role => "button"}
+            %i.fa.fa-cog.fa-2x
+          %ul.dropdown-menu.animated.fadeIn
+            %li
+              %a{:href => "javascript:void(0)"}
+                %i.fa.fa-user
+                Mi Perfil
+            %li
+              %a{:href => "javascript:void(0)"}
+                %i.fa.fa-check{:style => "color: green;"}
+                Balance General
+
+            %li
+              %a{:href => "javascript:void(0)"}
+                %i.fa.fa-times{:style => "color: red;"}
+                Salir
+

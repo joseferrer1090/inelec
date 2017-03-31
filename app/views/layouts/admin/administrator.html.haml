@@ -1,0 +1,27 @@
+!!!
+%html
+  %head
+  %title CRM | Inelec
+  = csrf_meta_tags
+  = stylesheet_link_tag 'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'
+  = stylesheet_link_tag '/administrator/css/material-design-iconic-font/dist/css/material-design-iconic-font.css'
+  = stylesheet_link_tag '/administrator/css/app.min.css'
+  = stylesheet_link_tag 'https://fonts.googleapis.com/css?family=Raleway:400,500,600,700,800,900,300'
+  = javascript_include_tag '/administrator/css/breakpoints/breakpoints.min.js'
+  :javascript
+    Breakpoints();
+
+  %body{class:'menubar-left menubar-unfold menubar-light theme-default'}
+
+    = render("admin/administrator/menu-top")
+    = render ("admin/administrator/menu-left")
+  #app-main.app-main
+    .wrapper
+      .app-content
+        = yield
+        =render("admin/administrator/footer")
+
+
+  = javascript_include_tag '/administrator/js/assets/core.min.js'
+  = javascript_include_tag '/administrator/js/assets/app.min.js'
+  = javascript_include_tag '/administrator/css/moment/moment.js'

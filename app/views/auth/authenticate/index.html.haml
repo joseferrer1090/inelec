@@ -1,0 +1,24 @@
+#back-to-home
+  %a.btn.btn-primary{:href => "/"}
+    %i.fa.fa-arrow-left
+.simple-page-wrap
+  .simple-page-logo
+    %a{:href => "/"}
+      = image_tag('logo/logo.png', class:'img-responsive', :style => "width: 50%; margin-left: 25%;")
+  #login-form.simple-page-form.animated.fadeIn
+    /%h4.form-title.m-b-xl.text-center Plataforma Administradora Inelec
+    %form{:action => "#"}
+      .form-group
+        %input#sign-in-email.form-control{:placeholder => "Email Coorporativo", :type => "email"}/
+      .form-group
+        %input#sign-in-password.form-control{:placeholder => "Password", :type => "password"}/
+      .form-group.m-b-xl
+        .checkbox.checkbox-primary
+          %input#keep_me_logged_in{:type => "checkbox"}/
+          %label{:for => "keep_me_logged_in"} Mantenerme conectado
+      %input.btn.btn-primary{:type => "submit", :value => "Ingresar"}/
+  .simple-page-footer
+    %p
+      %a{:href => "/auth/recovery"} Recupera tu cuenta ?
+    %p
+

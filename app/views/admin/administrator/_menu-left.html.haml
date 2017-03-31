@@ -1,0 +1,118 @@
+%aside#menubar.menubar.light
+  .app-user
+    .media
+      .media-left
+        .avatar.avatar-md.avatar-circle
+          %a{:href => ""}
+            = image_tag('admin/user.png', class:'img-responsive')
+      .media-body
+        .foldable
+          %h5
+            %a.username{:href => "javascript:void(0)"} Administrador
+          %ul
+            %li.dropdown
+              %a.dropdown-toggle.usertitle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "javascript:void(0)"}
+                %small Gerente
+
+
+  .menubar-scroll
+    .menubar-scroll-inner
+      %ul.app-menu
+        %li.has-submenu
+          %a.submenu-toggle{:href => ""}
+            %i.menu-icon.fa.fa-home
+            %span.menu-text Inicio
+
+        %li.has-submenu
+          %a.submenu-toggle{:href => ""}
+            %i.menu-icon.fa.fa-users
+            %span.menu-text Usuarios
+            %i.menu-caret.fa.fa-caret-right
+          %ul.submenu
+            %li
+              %a{:href => ""}
+                %span.menu-text Nuevo
+            %li
+              %a{:href => ""}
+                %span.menu-text Lista de Usuarios
+        %li.has-submenu
+          %a.submenu-toggle{:href => "javascript:void(0)"}
+            %i.menu-icon.fa.fa-address-card-o
+            %span.menu-text Clientes
+            %i.menu-caret.fa.fa-caret-right
+          %ul.submenu
+            %li
+              %a{:href => ""}
+                %span.menu-text Agregar Cliente
+            %li
+              %a{:href => ""}
+                %span.menu-text Lista de Clientes
+            %li
+              %a{:href => ""}
+                %span.menu-text Cotizaciones
+            %li
+              %a{:href => ""}
+                %span.menu-text Presupuesto
+
+        %li.has-submenu
+          %a.submenu-toggle{:href => "javascript:void(0)"}
+            %i.menu-icon.fa.fa-file-o
+            %span.menu-text Cotizaciones
+            %i.menu-caret.fa.fa-caret-right
+          %ul.submenu
+            %li
+              %a{:href => ""}
+                %span.menu-text Crear un Cotizacion
+
+            %li
+              %a{:href => ""}
+                %span.menu-text Ver cotizaciones
+            %li
+              %a{:href => ""}
+                %span.menu-text Buscar Cotizacion
+        %li
+          %a{:href => ""}
+            %i.menu-icon.fa.fa-envelope-o
+            %span.menu-text Correos
+
+        %li.has-submenu
+          %a.submenu-toggle{:href => "javascript:void(0)"}
+            %i.menu-icon.fa.fa-globe
+            %span.menu-text Web
+            %i.menu-caret.fa.fa-caret-right
+          %ul.submenu
+            %li
+              %a{:href => ""}
+                %span.menu-text Agregar articulo
+            %li
+              %a{:href => ""}
+                %span.menu-text Agregar imagen
+            
+        %li.has-submenu
+          %a.submenu-toggle{:href => "javascript:void(0)"}
+            %i.menu-icon.fa.fa-wrench
+            %span.menu-text General
+            %i.menu-caret.fa.fa-caret-right
+          %ul.submenu
+            %li
+              %a{:href => ""}
+                %span.menu-text Calendario
+            %li
+              %a{:href => ""}
+                %span.menu-text Contactos
+        %li.menu-separator
+          %hr/
+        %li
+          %a{:href => ""}
+            %i.menu-icon.fa.fa-question
+            %span.menu-text Ayuda
+
+#navbar-search.navbar-search.collapse
+  .navbar-search-inner
+    %form{:action => "#"}
+      %span.search-icon
+        %i.fa.fa-search
+      %input.search-field{:placeholder => "search...", :type => "search"}/
+    %button.search-close{"aria-expanded" => "false", "data-target" => "#navbar-search", "data-toggle" => "collapse", :type => "button"}
+      %i.fa.fa-close
+  .navbar-search-backdrop{"aria-expanded" => "false", "data-target" => "#navbar-search", "data-toggle" => "collapse"}

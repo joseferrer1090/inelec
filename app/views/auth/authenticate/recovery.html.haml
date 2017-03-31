@@ -1,0 +1,13 @@
+#back-to-home
+  %a.btn.btn-primary{:href => "javascript:history.back()"}
+    %i.fa.fa-arrow-left
+.simple-page-wrap
+  .simple-page-logo
+    %a{:href => "/"}
+      = image_tag('logo/logo.png', class:'img-responsive', style:'width: 50%; margin-left: 25%;')
+  #reset-password-form.simple-page-form.animated.fadeIn
+    %h4.form-title.m-b-xl.text-center Olvide mi  Contraseña ?
+    %form{:action => "#"}
+      .form-group
+        %input#reset-password-email.form-control{:placeholder => "Email coorporativo", :type => "email"}/
+      %input.btn.btn-primary{:type => "submit", :value => "Restablecer Contraseña"}/

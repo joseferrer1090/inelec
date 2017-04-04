@@ -1,4 +1,4 @@
-%section#section-about.section-padding
+%section#section-nosotros.section-padding
   .container
     .row
       .col-md-4.col-sm-4.col-lg-4
@@ -34,5 +34,20 @@
         .col-md-3.col-sm-5
           %br
           .about-btn
-            %a.btn.btn-feature{:href => "#", "data-toggle" => "modal", "data-target" => "#myModal"} Agenda tu cita
+            %a.btn.btn-feature{"data-toggle" => "modal", "data-target" => "#myModal"} Agenda tu cita
+%section#section-conference.section-padding
+  .container
+    .row
+      .col-md-3.col-sm-6.col-xs-12
+        .about-box
+          %i.icon.icon-mic
+      .col-md-3.col-sm-6.col-xs-12
+        .about-box
+          %i.icon.icon-mic
+      .col-md-3.col-sm-6.col-xs-12
+        .about-box
+          %i.icon.icon-mic
+      .col-md-3.col-sm-6.col-xs-12
+        .about-box
+          %i.icon.icon-mic
 =render('modal_consult')

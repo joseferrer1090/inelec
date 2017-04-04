@@ -1,4 +1,120 @@
-.container
-  .row
-    .col-md-12
-      %p hola mundo
+.wrap
+  %section.app-content
+    .row
+      .col-md-4
+        .widget
+          %header.widget-header
+            %h4.widget-title.text-center Correos Enviados
+            //%small.pull-right.text-muted Hoy
+          %hr.widget-separator/
+          .widget-body.clearfix
+            .text-center
+              %h3.text-color.m-t-xs.m-b-md.fw-600.fz-lg
+                %i.fa.fa-envelope
+                %span 9 
+              .text-warning
+                .m-r-xs
+                %sapn 10 correo faltantes
+            .pull-right
+      .col-md-4
+        .widget
+          %header.widget-header
+            %h4.widget-title.text-center Cotizaciones Realizadas
+            //%small.pull-right.text-muted Hoy
+          %hr.widget-separator
+          .widget-body.clearfix
+            .text-center
+              %h3.text-color.m-t-xs.m-b-md.fw-600.fz-lg
+                %i.fa.fa-file-excel-o
+                %span 2 
+              .text-danger
+                Cotizaciones Enviadas
+      .col-md-4
+        .widget
+          %header.widget-header
+            %h4.widget-title.text-center Presupuesto Asignado
+          %hr.widget-separator
+            .widget-body.clearfix
+              .text-center
+                %h3.text-color.m-t-xs.m-b-md.fw-600.fz-lg
+                  %i.fa.fa-money 
+                  %span $ 1.000.000
+                .text-success
+                  Presupuesto Asignado
+    .row
+      .col-md-8
+        .widget
+          %header.widget-header
+            %h4.widget-title.pull-left Promedio de Cotizaciones
+            %small.pull-right.text-success actualizacion: Hoy
+          %hr.widget-separator 
+          .widget-body.clearfix
+            %div{:style => "margin-bottom: 390px;"}
+      .col-md-4
+        .widget
+          %header.widget-header
+            %h4.widget-title.pull-left Clientes Agregados
+          %hr.widget-separator
+          .widget-body.clearfix
+            =render('lista-clientes')
+    .row
+      .col-md-12
+        .widget
+          %header.widget-header
+            %h4.widget-title.pull-left Status Actual de cotizaciones
+            %small.pull-right.text-success Ultima actualizacion: Hoy
+            
+          %hr.widget-separator
+          .widget-body.clearfix
+            .table-responsive
+              %table.table.table-bordered.table-hover
+                %thead
+                  %tr
+                    %th.text-center Nombre Encargado
+                    %th.text-center Empresa
+                    %th.text-center Valor total
+                    %th.text-center Estado Actual
+                    %th.text-center Fecha de Creacion
+                %tbody
+                  %tr.text-center
+                    %td Firm Website
+                    %td John Doe
+                    %td 120$
+                    %td
+                      %span.label.label-info En estudio
+                    %td 06/03/2016
+                  %tr.text-center
+                    %td Security Test
+                    %td Jane Doe
+                    %td 2500$
+                    %td
+                      %span.label.label-success Facturacion
+                    %td 05/15/2016
+                  %tr.text-center
+                    %td Branches Linking
+                    %td Diana Aid
+                    %td 1500$
+                    %td
+                      %span.label.label-warning Revision
+                    %td 05/26/2016
+                  %tr.text-center
+                    %td Resources Optimization
+                    %td Sara Adams
+                    %td 1300$
+                    %td
+                      %span.label.label-info En Estudio
+                    %td 06/02/2016
+                  %tr.text-center
+                    %td Office Automation
+                    %td Ibrahim Ali
+                    %td 7200$
+                    %td
+                      %span.label.label-success Facturacion
+                    %td 06/13/2016
+                  %tr.text-center
+                    %td System Recovery
+                    %td Smith Adams
+                    %td 1000$
+                    %td
+                      %span.label.label-danger Cancelada
+                    %td 06/02/2016

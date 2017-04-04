@@ -1,182 +1,21 @@
-%section#section-schedule.section-padding
-  .container
+%section#section-gallery.section.section-padding
+  .container-fluid
     .row
       .col-md-12
-        .section-heading.text-center
-          %h2 Great speaker with great topic
-          %p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi magnam praesentium, error perferendis itaque quam quisquam asperiores.
+        .section-heading.text-center.wow.fadeInUp.animated{:style => "visibility: visible;"}
+          %h2 Envento y Galeria
+          %p Lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem
     .row
-      %ul#schedule-tab.nav.nav-tabs
-        %li.active.col-md-3.col-sm-3.col-xs-12
-          %a{"data-toggle" => "tab", :href => "#tab-a"}
-            %h3 Day 1 ,22th
-        %li.col-md-3.col-sm-3.col-xs-12
-          %a{"data-toggle" => "tab", :href => "#tab-b"}
-            %h3 Day 2 ,23th
-        %li.col-md-3.col-sm-3.col-xs-12
-          %a{"data-toggle" => "tab", :href => "#tab-c"}
-            %h3 Day 3 ,24th
-        %li.col-md-3.col-sm-3.col-xs-12
-          %a{"data-toggle" => "tab", :href => "#tab-d"}
-            %h3 Day 4 ,25th
-      .tab-content
-        #tab-a.tab-pane.fade.in.active
-          .time-desc
-            .container
-              .row
-                .col-md-3.col-xs-12.col-sm-6
-                  .speaker-img
-                    %img.img-responsive{:alt => "", :src => "assets/img/speaker/team1.jpg"}/
-                  .desc-inner
-                    %h4 Samantha Jonson
-                    %h5 Founder of Creative Agency
-                .col-md-2
-                  .s-time
-                    %h3 session 1
-                    %h4 08:45 - 09:15
-                .col-md-7
-                  .desc-inner
-                    %h3 The Future of the Web: and how to prepare for it now
-                    %p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet maiores suscipit facere provident, reiciendis ab, soluta, consectetur adipisicing elit. Eveniet maiores suscipit facere provident, reiciendis ab, soluta, unde nostrum eligendi necessitatibus quia distinctio mollitia ipsa! Ad a, suscipit voluptatem atque cupiditate.
-
-          .time-desc
-            .container
-              .row
-                .col-md-3.col-xs-12.col-sm-6
-                  .speaker-img
-                    %img.img-responsive{:alt => "", :src => "assets/img/speaker/team2.jpg"}/
-                  .desc-inner
-                    %h4 Samantha Jonson
-                    %h5 Founder of Creative Agency
-                .col-md-2
-                  .s-time
-                    %h3 session 2
-                    %h4 08:45 - 09:15
-                .col-md-7
-                  .desc-inner
-                    %h3 The Future of the Web: and how to prepare for it now
-                    %p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet maiores suscipit facere provident, reiciendis ab, soluta, consectetur adipisicing elit. Eveniet maiores suscipit facere provident, reiciendis ab, soluta, unde nostrum eligendi necessitatibus quia distinctio mollitia ipsa! Ad a, suscipit voluptatem atque cupiditate.
-
-          .time-desc
-            .container
-              .row
-                .col-md-3.col-xs-12.col-sm-6
-                  .speaker-img
-                    %img.img-responsive{:alt => "", :src => "assets/img/speaker/team3.jpg"}/
-                  .desc-inner
-                    %h4 Samantha Jonson
-                    %h5 Founder of Creative Agency
-                .col-md-2
-                  .s-time
-                    %h3 session 3
-                    %h4 08:45 - 09:15
-                .col-md-7
-                  .desc-inner
-                    %h3 The Future of the Web: and how to prepare for it now
-                    %p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet maiores suscipit facere provident, reiciendis ab, soluta, consectetur adipisicing elit. Eveniet maiores suscipit facere provident, reiciendis ab, soluta, unde nostrum eligendi necessitatibus quia distinctio mollitia ipsa! Ad a, suscipit voluptatem atque cupiditate.
-
-        #tab-b.tab-pane.fade.in
-          .time-desc
-            .container
-              .row
-                .col-md-2.col-xs-12.col-sm-3
-                  .s-time
-                    %h3 session 1
-                    %h4 08:45 - 09:15
-                .col-md-8.col-xs-12.col-sm-6
-                  .desc-inner
-                    %h3 The Future of the Web: and how to prepare for it now
-                    %h4 Samantha Jonson
-                    %h5 Founder of Creative Agency
-                    %p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet maiores suscipit facere provident, reiciendis ab, soluta, unde nostrum eligendi necessitatibus quia distinctio mollitia ipsa! Ad a, suscipit voluptatem atque cupiditate.
-                .col-md-2.col-xs-12.col-sm-3
-                  .speaker-img
-                    %img.img-responsive{:alt => "", :src => "assets/img/speaker/team1.jpg"}/
-
-          .time-desc
-            .container
-              .row
-                .col-md-2.col-xs-12.col-sm-3
-                  .s-time
-                    %h3 session 1
-                    %h4 08:45 - 09:15
-                .col-md-8.col-xs-12.col-sm-6
-                  .desc-inner
-                    %h3 The Future of the Web: and how to prepare for it now
-                    %h4 Samantha Jonson
-                    %h5 Founder of Creative Agency
-                    %p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet maiores suscipit facere provident, reiciendis ab, soluta, unde nostrum eligendi necessitatibus quia distinctio mollitia ipsa! Ad a, suscipit voluptatem atque cupiditate.
-                .col-md-2.col-xs-12.col-sm-3
-                  .speaker-img
-                    %img.img-responsive{:alt => "", :src => "assets/img/speaker/team2.jpg"}/
-
-          .time-desc
-            .container
-              .row
-                .col-md-2.col-xs-12.col-sm-3
-                  .s-time
-                    %h3 session 1
-                    %h4 08:45 - 09:15
-                .col-md-8.col-xs-12.col-sm-6
-                  .desc-inner
-                    %h3 The Future of the Web: and how to prepare for it now
-                    %h4 Samantha Jonson
-                    %h5 Founder of Creative Agency
-                    %p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet maiores suscipit facere provident, reiciendis ab, soluta, unde nostrum eligendi necessitatibus quia distinctio mollitia ipsa! Ad a, suscipit voluptatem atque cupiditate.
-                .col-md-2.col-xs-12.col-sm-3
-                  .speaker-img
-                    %img.img-responsive{:alt => "", :src => "assets/img/speaker/team3.jpg"}/
-
-        #tab-c.tab-pane.fade.in
-          .time-desc
-            .container
-              .row
-                .col-md-2.col-xs-12.col-sm-3
-                  .s-time
-                    %h3 session 1
-                    %h4 08:45 - 09:15
-                .col-md-8.col-xs-12.col-sm-6
-                  .desc-inner
-                    %h3 The Future of the Web: and how to prepare for it now
-                    %h4 Samantha Jonson
-                    %h5 Founder of Creative Agency
-                    %p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet maiores suscipit facere provident, reiciendis ab, soluta, unde nostrum eligendi necessitatibus quia distinctio mollitia ipsa! Ad a, suscipit voluptatem atque cupiditate.
-                .col-md-2.col-xs-12.col-sm-3
-                  .speaker-img
-                    %img.img-responsive{:alt => "", :src => "assets/img/speaker/c1.jpg"}/
-
-          .time-desc
-            .container
-              .row
-                .col-md-2.col-xs-12.col-sm-3
-                  .s-time
-                    %h3 session 1
-                    %h4 08:45 - 09:15
-                .col-md-8.col-xs-12.col-sm-6
-                  .desc-inner
-                    %h3 The Future of the Web: and how to prepare for it now
-                    %h4 Samantha Jonson
-                    %h5 Founder of Creative Agency
-                    %p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet maiores suscipit facere provident, reiciendis ab, soluta, unde nostrum eligendi necessitatibus quia distinctio mollitia ipsa! Ad a, suscipit voluptatem atque cupiditate.
-                .col-md-2.col-xs-12.col-sm-3
-                  .speaker-img
-                    %img.img-responsive{:alt => "", :src => "assets/img/speaker/c4.jpg"}/
-
-        #tab-d.tab-pane.fade.in
-          .time-desc
-            .container
-              .row
-                .col-md-2.col-xs-12.col-sm-3
-                  .s-time
-                    %h3 session 1
-                    %h4 08:45 - 09:15
-                .col-md-8.col-xs-12.col-sm-6
-                  .desc-inner
-                    %h3 The Future of the Web: and how to prepare for it now
-                    %h4 Samantha Jonson
-                    %h5 Founder of Creative Agency
-                    %p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet maiores suscipit facere provident, reiciendis ab, soluta, unde nostrum eligendi necessitatibus quia distinctio mollitia ipsa! Ad a, suscipit voluptatem atque cupiditate.
-                .col-md-2.col-xs-12.col-sm-3
-                  .speaker-img
-                    %img.img-responsive{:alt => "", :src => "assets/img/speaker/c1.jpg"}/
-
+      .loop.owl-carousel.owl-theme.owl.center.owl-loaded
+        %div
+          = image_tag('gallery/img1.jpg', class:'img-responsive')
+        %div
+          = image_tag('gallery/img2.jpg', class:'img-responsive')
+        %div
+          = image_tag('gallery/img3.jpg', class:'img-responsive')
+        %div
+          = image_tag('gallery/img2.jpg', class:'img-responsive')
+        %div
+          = image_tag('gallery/img1.jpg', class:'img-responsive')
+        %div
+          = image_tag('gallery/img3.jpg', class:'img-responsive')

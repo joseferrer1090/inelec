@@ -1,0 +1,7 @@
+{
+  "name": "Inelec Api",
+  "version": "0.1.0",
+  "description": "API Restful para el administrador de inelec",
+  "title": "Inelec Api documentacion",
+  "url" : "api/v1"
+}

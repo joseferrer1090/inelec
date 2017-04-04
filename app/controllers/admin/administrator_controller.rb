@@ -9,6 +9,3 @@ module Admin
 
   end
 end
-
-
-

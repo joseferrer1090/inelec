@@ -59,3 +59,8 @@ gem 'haml-rails'
 #font-awesome
 gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.1'
 
+# Use ActiveModel has_secure_password
+gem 'bcrypt', '~> 3.1.7'
+
+# Json web tocken
+gem 'jwt'

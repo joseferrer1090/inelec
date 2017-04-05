@@ -12,6 +12,3 @@ module Admin
 
   end
 end
-
-
-

@@ -13,7 +13,8 @@ Rails.application.routes.draw do
 
   #Routes NameSpace Administrator
     namespace "admin" do
-      get '/administrator', to:'administrator#index', as:'index'
+      get '/administrator', :to =>'administrator#index', as:'index'
+      get '/usuarios', :to => 'administrator#usuarios', as:'user'
     end
   #Fin
 

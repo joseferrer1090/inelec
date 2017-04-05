@@ -1,19 +1,121 @@
+.promo
+    .promo-body
+        %form{:action => "#"}
+            .row
+                .form-group
+                    .col-xs-12.col-sm-8.col-md-offset-1
+                        %input{:type => "search", :class => "form-control promo-search-field", placeholder:'Nombre del Cliente o Usuario...'}/
+                    .col-xs-12.col-sm-2
+                        %input{:type => "submit", :class => "btn btn-primary btn-block promo-search-submit", :value => "Buscar"}/
+                    
+    .promo-footer
+        .row.no-gutter
+            .col-sm-2.col-xs-6.promo-tab
+                %a{:href => "#"} Usuarios
+            .col-sm-2.col-xs-6.promo-tab
 .wrap
-    %section.app-content
-        .promo
-            .promo-body
-                %form{:action => "#"}
-                    .row
-                        .form-group
-                            .col-xs-12.col-sm-8.col-md-offset-1
-                                %input{:type => "search", :class => "form-control promo-search-field", placeholder:'Nombre del Cliente o Usuario...'}/
-                            .col-xs-12.col-sm-2
-                                %input{:type => "submit", :class => "btn btn-primary btn-block promo-search-submit", :value => "Buscar"}/
-                            
-            .promo-footer
-                .row.no-gutter
-                    .col-sm-2.col-xs-6.promo-tab
-                        %a{:href => "#"} Usuarios
-                    .col-sm-2.col-xs-6.promo-tab
-                        %a{:href => "#"} Agregar
-                    .col-sm-2.col-xs-6.promo-tab
+    %section#app-content
+        .panel.panel-default
+            .panel-heading.bg-white
+                %p.panel-title.text-muted Mis Usuarios
+            .panel-body
+                .row.m-b-lg
+                    .col-md-4.col-sm-6
+                        .user-card
+                            .media
+                                .media-left
+                                    .avatar.avatar-lg.avatar-circle
+                                        = image_tag('user.png', :class => "img-responsive img-circle")
+                                .media-body
+                                    %h5.media-heading Usuario Nombre
+                                    %small.media-meta cargo del usuario
+                                    %br
+                                    %a.text-success{:href => "#"} Ver
+                                    %a.text-danger{:href => "#"} Eliminar
+                                    %a.text-warning{:href => "#"} Actualizar
+                    .col-md-4.col-sm-6
+                        .user-card
+                            .media
+                                .media-left
+                                    .avatar.avatar-lg.avatar-circle
+                                        = image_tag('user.png', :class => "img-responsive img-circle")
+                                .media-body
+                                    %h5.media-heading Usuario Nombre
+                                    %small.media-meta cargo del usuario
+                                    %br
+                                    %a.text-success{:href => "#"} Ver
+                                    %a.text-danger{:href => "#"} Eliminar
+                                    %a.text-warning{:href => "#"} Actualizar
+                    .col-md-4.col-sm-6
+                        .user-card
+                            .media
+                                .media-left
+                                    .avatar.avatar-lg.avatar-circle
+                                        = image_tag('user.png', :class => "img-responsive img-circle")
+                                .media-body
+                                    %h5.media-heading Usuario Nombre
+                                    %small.media-meta cargo del usuario
+                                    %br
+                                    %a.text-success{:href => "#"} Ver
+                                    %a.text-danger{:href => "#"} Eliminar
+                                    %a.text-warning{:href => "#"} Actualizar
+                    .col-md-4.col-sm-6
+                        .user-card
+                            .media
+                                .media-left
+                                    .avatar.avatar-lg.avatar-circle
+                                        = image_tag('user.png', :class => "img-responsive img-circle")
+                                .media-body
+                                    %h5.media-heading Usuario Nombre
+                                    %small.media-meta cargo del usuario
+                                    %br
+                                    %a.text-success{:href => "#"} Ver
+                                    %a.text-danger{:href => "#"} Eliminar
+                                    %a.text-warning{:href => "#"} Actualizar
+                    .col-md-4.col-sm-6
+                        .user-card
+                            .media
+                                .media-left
+                                    .avatar.avatar-lg.avatar-circle
+                                        = image_tag('user.png', :class => "img-responsive img-circle")
+                                .media-body
+                                    %h5.media-heading Usuario Nombre
+                                    %small.media-meta cargo del usuario
+                                    %br
+                                    %a.text-success{:href => "#"} Ver
+                                    %a.text-danger{:href => "#"} Eliminar
+                                    %a.text-warning{:href => "#"} Actualizar
+                    .col-md-4.col-sm-6
+                        .user-card
+                            .media
+                                .media-left
+                                    .avatar.avatar-lg.avatar-circle
+                                        = image_tag('user.png', :class => "img-responsive img-circle")
+                                .media-body
+                                    %h5.media-heading Usuario Nombre
+                                    %small.media-meta cargo del usuario
+                                    %br
+                                    %a.text-success{:href => "#"} Ver
+                                    %a.text-danger{:href => "#"} Eliminar
+                                    %a.text-warning{:href => "#"} Actualizar
+                %nav.search-results-navigation
+                    %ul.pagination.m-0
+                        %li
+                            %a{:href => "#", "aria-label" => "Previous"}    
+                                %span{"aria-hidden" => "true"}
+                                    %i.fa.fa-arrow-left
+                        %li
+                            %a{:href => "#"} 1
+                        %li
+                            %a{:href => "#"} 2
+                        %li
+                            %a{:href => "#"} 3
+                        %li 
+                            %a{:href => "#"} 4
+                        %li
+                            %a{:href => "#", "aria-label" => "Next"}
+                                %span{"aria-hidden" => "true"}
+                                    %i.fa.fa-arrow-right
+                                
+                                    
+            

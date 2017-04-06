@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170404193534) do
+ActiveRecord::Schema.define(version: 20170405195326) do
 
   create_table "items", force: :cascade do |t|
     t.string   "name"
@@ -19,6 +19,42 @@ ActiveRecord::Schema.define(version: 20170404193534) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["todo_id"], name: "index_items_on_todo_id"
+  end
+
+  create_table "permissions", force: :cascade do |t|
+    t.integer  "level"
+    t.integer  "section_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["section_id"], name: "index_permissions_on_section_id"
+  end
+
+  create_table "permissions_roles", id: false, force: :cascade do |t|
+    t.integer "permission_id", null: false
+    t.integer "role_id",       null: false
+    t.index ["permission_id", "role_id"], name: "index_permissions_roles_on_permission_id_and_role_id"
+  end
+
+  create_table "roles", force: :cascade do |t|
+    t.string   "name"
+    t.string   "slug"
+    t.string   "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "roles_users", id: false, force: :cascade do |t|
+    t.integer "role_id", null: false
+    t.integer "user_id", null: false
+    t.index ["role_id", "user_id"], name: "index_roles_users_on_role_id_and_user_id"
+  end
+
+  create_table "sections", force: :cascade do |t|
+    t.string   "name"
+    t.string   "description"
+    t.string   "slug"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "todos", force: :cascade do |t|
@@ -30,6 +66,7 @@ ActiveRecord::Schema.define(version: 20170404193534) do
 
   create_table "users", force: :cascade do |t|
     t.string   "name"
+    t.string   "last_name"
     t.string   "email"
     t.string   "password_digest"
     t.datetime "created_at",      null: false

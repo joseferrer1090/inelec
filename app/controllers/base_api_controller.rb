@@ -11,6 +11,7 @@ class BaseApiController < ApplicationController
     end
     # Check for valid request token and return user
     def authorize_request
+      render json: (AuthorizeApiRequest.new(request.headers).call)
       @current_user = (AuthorizeApiRequest.new(request.headers).call)[:user]
     end
 end

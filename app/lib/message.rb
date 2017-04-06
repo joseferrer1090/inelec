@@ -1,7 +1,7 @@
 # app/lib/message.rb
 class Message
   def self.not_found(record = 'record')
-    "Sorry, #{record} not found."
+    "Lo siento, #{record} no ha sido encontrado."
   end
 
   def self.invalid_credentials
@@ -22,6 +22,10 @@ class Message
 
   def self.account_created
     'Account created successfully'
+  end
+
+  def self.login
+    'Login successfully'
   end
 
   def self.account_not_created

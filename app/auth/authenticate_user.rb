@@ -6,7 +6,7 @@ class AuthenticateUser
 
   # Service entry point
   def call
-    JsonWebToken.encode(user_id: user.id) if user
+    data
   end
 
   private
@@ -18,6 +18,13 @@ class AuthenticateUser
     user = User.find_by(email: email)
     return user if user && user.authenticate(password)
     # raise Authentication error if credentials are invalid
-    raise(ExceptionHandler::AuthenticationError, Message.invalid_credentials)
+    raise(ExceptionHandler::InvalidToken, Message.invalid_credentials)
+  end
+
+  def data
+    token = JsonWebToken.encode(user_id: user.id) if user
+    exp = JsonWebToken.decode(token)[:exp]
+    @user = user.as_json(:include => [ {:todos => { :include => :items }},:roles])
+    return {token: token,exp: Time.at(exp), user: @user}
   end
 end

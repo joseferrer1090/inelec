@@ -7,7 +7,8 @@ class AuthorizeApiRequest
   # Service entry point - return valid user object
   def call
     {
-      user: user
+      user: user,
+      exp: Time.at(decoded_auth_token[:exp])
     }
   end
 

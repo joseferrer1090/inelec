@@ -14,12 +14,14 @@ Rails.application.routes.draw do
 
   #Routes NameSpace Administrator
     namespace "admin" do
-      get '/administrator', to:'administrator#index', as:'index'
+      get '/administrator', :to =>'administrator#index', as:'index'
+      get '/usuarios', :to => 'administrator#usuarios', as:'user'
     end
   #Fin
 
 
   #Api Routes
+    match '*any' => 'base_api#options', :via => [:options]
     namespace "api" do
       namespace "v1" do
         resources :todos do

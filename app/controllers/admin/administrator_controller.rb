@@ -7,5 +7,8 @@ module Admin
 
       end
 
+      def usuarios
+      end
+
   end
 end

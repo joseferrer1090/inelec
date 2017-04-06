@@ -25,6 +25,6 @@ class AuthenticateUser
     token = JsonWebToken.encode(user_id: user.id) if user
     exp = JsonWebToken.decode(token)[:exp]
     @user = user.as_json(:include => [ {:todos => { :include => :items }},:roles])
-    return {token: token,exp: Time.at(exp), user: @user}
+    return {token: token,exp: (Time.at(exp)-Time.now).to_i, user: @user}
   end
 end

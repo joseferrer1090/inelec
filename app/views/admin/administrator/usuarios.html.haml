@@ -1,24 +1,48 @@
 .promo
-    .promo-body
-        %form{:action => "#"}
-            .row
-                .form-group
-                    .col-xs-12.col-sm-8.col-md-offset-1
-                        %input{:type => "search", :class => "form-control promo-search-field", placeholder:'Nombre del Cliente o Usuario...'}/
-                    .col-xs-12.col-sm-2
-                        %input{:type => "submit", :class => "btn btn-primary btn-block promo-search-submit", :value => "Buscar"}/
-                    
-    .promo-footer
-        .row.no-gutter
-            .col-sm-2.col-xs-6.promo-tab
-                %a{:href => "#"} Usuarios
-            .col-sm-2.col-xs-6.promo-tab
-.wrap
-    %section#app-content
-        .panel.panel-default
-            .panel-heading.bg-white
-                %p.panel-title.text-muted Mis Usuarios
-            .panel-body
-                .row.m-b-lg
+  .promo-body
+    %form{:action => "#"}
+      .row
+        .col-xs-12.col-sm-8.col-md-offset-1
+          .form-group
+            %input{:type => "search", :class => "form-control promo-search-field", :placeholder => "Nombre del usuario"}
+        .col-xs-12.col-sm-2
+          %input{:type => "submit", :class => "btn btn-primary btn-block promo-search-submit", :value => "Buscar"}
+  .promo-footer
+    .row.no-gutter
+      .col-md-12
+        .widget
+          .m-b-lg.nav-tabs-horizontal
+            %ul.nav.nav-tabs{:role => "tablist", :style => "background: #F5F7F9 !important;"}
+              %li.active{:role => "presentation"}
+                %a{"aria-controls" => "tab-3", "data-toggle" => "tab", :href => "#tab-1", :role => "tab"} Usuarios
+              %li{:role => "presentation"}
+                %a{"aria-controls" => "tab-2", "data-toggle" => "tab", :href => "#tab-2", :role => "tab"} Agregar Usuario
+            .tab-content.p-md
+              #tab-1.tab-pane.in.active.fade{:role => "tabpanel"}
                 =render ('admin/partialsUsuarios/list-usuarios')
                 =render ('admin/partialsUsuarios/modal-ver')
+                =render ('admin/partialsUsuarios/modal-delete')
+              #tab-2.tab-pane.in.fade{:role => "tabpanel"}
+                .wrap
+                  .container
+                  .row
+                    .col-md-3
+                      .widget
+                        %header.widget-header
+                          %h4.widget-title Perfil Usuario
+                        %hr.widget-separator/
+                        .widget-body.text-center
+                          .big-icon.m-b-md.watermark
+                            %i.fa.fa-5x.fa-user-circle
+                          %h4.m-b-md Nombre del Usuario
+                          %p Cargo:
+                          %a.btn.p-v-xl.btn-primary{:href => "#"} Agregar Imagen de Perfil
+
+                    .col-md-8{:style => "margin-left: 10px; width: 73%;"}
+                      .widget
+                        %header.widget-header
+                          %h4.widget-title Informacion del Usuario
+                        %hr.widget-separator
+                        .widget-body
+                          %form{:role => "form"}
+

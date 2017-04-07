@@ -1,12 +1,73 @@
-.modal.fade#modalVer
-    .modal-dialog{:role => "document"}
-        .modal-content
-            .modal-header
-                %h5.modal-title Informacion del usuario
-                %button.close{"aria-label" => "Close", "data-dismiss" => "modal", :type => "button"}
-                    %span{"aria-hidden" => "true"} x
-            .modal-body
-                %p modal Body Text
-            .modal-footer
-                %button.btn.btn-default{:type => "button"} Cerrar
-                %button.btn.btn-secondary{"data-dismiss" => "modal", :type => "button"} Cerrar
+#modalVer.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "exampleModalLongTitle", :role => "dialog", :tabindex => "-1"}
+  .modal-dialog{:role => "document"}
+    .modal-body
+      .col-md-12
+        .container
+  .row
+    .col-md-offset-2.col-md-8.col-lg-offset-3.col-lg-6
+      .well.profile
+        .col-sm-12
+          .col-xs-12.col-sm-8
+            %h2 Jhon Doe
+            %p
+              %strong Cargo:
+              Vendedor
+            %p
+              %strong Empresa:
+              Inelec International SAS
+            %p
+              %strong Permisos:
+              %span.text-danger
+                Vendedor
+
+          .col-xs-12.col-sm-4.text-center
+            %figure
+              =image_tag('user.png', :class => "img-responsive img-circle")
+
+        .col-xs-12.divider.text-center
+          .col-xs-12.col-sm-4.emphasis
+            %h2
+              %strong 20
+            %p
+              %small Cotizaciones Enviadas
+            %button.btn.btn-default.btn-outline
+              %span.fa.fa-check
+              Ver Informacion
+          .col-xs-12.col-sm-4.emphasis
+            %h2
+              %strong 245
+            %p
+              %small Correos enviados
+            %button.btn.btn-primary.btn-outline
+              %span.fa.fa-user
+              Otra informacion
+          .col-xs-12.col-sm-4.emphasis
+            %h2
+              %strong 43
+            %p
+              %small Facturas Emitidas
+            .btn-group.dropup
+              %button.btn.btn-danger{:type => "button"}
+                %span.fa.fa-lock
+                Cambiar Permisos
+              %button.btn.btn-danger.btn-outline.dropdown-toggle{"data-toggle" => "dropdown", :type => "button"}
+                %span.caret
+                %span.sr-only Toggle Dropdown
+              %ul.dropdown-menu.text-left{:role => "menu"}
+                %li
+                  %a{:href => "#"}
+
+                    Vendedor
+                %li.divider
+                %li
+                  %a{:href => "#"}
+
+                    Administrador
+                %li.divider
+                %li
+                  %a{:href => "#"}
+
+                    Tecnico
+
+
+

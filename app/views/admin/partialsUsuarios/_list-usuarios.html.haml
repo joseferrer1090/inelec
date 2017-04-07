@@ -1,96 +1,152 @@
-.col-md-4.col-sm-6
-    .user-card
-        .media
-            .media-left
-                .avatar.avatar-lg.avatar-circle
-                    = image_tag('user.png', :class => "img-responsive img-circle")
-            .media-body
-                %h5.media-heading Usuario Nombre
-                %small.media-meta cargo del usuario
-                %br
-                %a.text-success{:href => "#", "data-target" => "#modalVer", "data-toggle" => "modal"} Ver
-                %a.text-danger{:href => "#"} Eliminar
-                %a.text-warning{:href => "#"} Actualizar
-.col-md-4.col-sm-6
-    .user-card
-        .media
-            .media-left
-                .avatar.avatar-lg.avatar-circle
-                    = image_tag('user.png', :class => "img-responsive img-circle")
-            .media-body
-                %h5.media-heading Usuario Nombre
-                %small.media-meta cargo del usuario
-                %br
-                %a.text-success{:href => "#"} Ver
-                %a.text-danger{:href => "#"} Eliminar
-                %a.text-warning{:href => "#"} Actualizar
-.col-md-4.col-sm-6
-    .user-card
-        .media
-            .media-left
-                .avatar.avatar-lg.avatar-circle
-                    = image_tag('user.png', :class => "img-responsive img-circle")
-            .media-body
-                %h5.media-heading Usuario Nombre
-                %small.media-meta cargo del usuario
-                %br
-                %a.text-success{:href => "#"} Ver
-                %a.text-danger{:href => "#"} Eliminar
-                %a.text-warning{:href => "#"} Actualizar
-.col-md-4.col-sm-6
-    .user-card
-        .media
-            .media-left
-                .avatar.avatar-lg.avatar-circle
-                    = image_tag('user.png', :class => "img-responsive img-circle")
-            .media-body
-                %h5.media-heading Usuario Nombre
-                %small.media-meta cargo del usuario
-                %br
-                %a.text-success{:href => "#"} Ver
-                %a.text-danger{:href => "#"} Eliminar
-                %a.text-warning{:href => "#"} Actualizar
-.col-md-4.col-sm-6
-    .user-card
-        .media
-            .media-left
-                .avatar.avatar-lg.avatar-circle
-                    = image_tag('user.png', :class => "img-responsive img-circle")
-            .media-body
-                %h5.media-heading Usuario Nombre
-                %small.media-meta cargo del usuario
-                %br
-                %a.text-success{:href => "#"} Ver
-                %a.text-danger{:href => "#"} Eliminar
-                %a.text-warning{:href => "#"} Actualizar
-.col-md-4.col-sm-6
-    .user-card
-        .media
-            .media-left
-                .avatar.avatar-lg.avatar-circle
-                    = image_tag('user.png', :class => "img-responsive img-circle")
-            .media-body
-                %h5.media-heading Usuario Nombre
-                %small.media-meta cargo del usuario
-                %br
-                %a.text-success{:href => "#"} Ver
-                %a.text-danger{:href => "#"} Eliminar
-                %a.text-warning{:href => "#"} Actualizar
-%nav.search-results-navigation
-%ul.pagination.m-0
-    %li
-        %a{:href => "#", "aria-label" => "Previous"}    
-            %span{"aria-hidden" => "true"}
-                %i.fa.fa-arrow-left
-    %li
-        %a{:href => "#"} 1
-    %li
-        %a{:href => "#"} 2
-    %li
-        %a{:href => "#"} 3
-    %li 
-        %a{:href => "#"} 4
-    %li
-        %a{:href => "#", "aria-label" => "Next"}
-            %span{"aria-hidden" => "true"}
-                %i.fa.fa-arrow-right
+.wrap
+  %section.app-content
+    .panel.panel-default
+      .panel-body
+        .row.m-b-lg
+          .col-md-4.col-sm-6
+            .user-card#individual
+              .media
+                .media-left
+                  .avatar.avatar-lg.avatar-circle
+                    %a{:href => "#"}
+                      %i.fa.fa-user-circle.fa-3x
+                .media-body
+                  %h5.media-heading
+                    %a.title-color{:href => "#"} John Doe
+                  %p
+                    %a.text-primary{:href => "#", "data-toggle" => "modal", "data-target" => "#modalVer"} Ver
+                    %a.text-color{:href => "#"} Editar
+                    %a.text-danger{:href => "#", "data-toggle" => "modal", "data-target" => "#modalDelete"} Eliminar
+          .col-md-4.col-sm-6
+            .user-card#individual
+              .media
+                .media-left
+                  .avatar.avatar-lg.avatar-circle
+                    %a{:href => "#"}
+                      %i.fa.fa-user-circle.fa-3x
+                .media-body
+                  %h5.media-heading
+                    %a.title-color{:href => "#"} Ibraham Said
+                  %p
+                    %a.text-color{:href => "#"} Ver
+                    %a.text-color{:href => "#"} Editar
+                    %a.text-danger{:href => "#"} Eliminar
+          .col-md-4.col-sm-6
+            .user-card#individual
+              .media
+                .media-left
+                  .avatar.avatar-lg.avatar-circle
+                    %a{:href => "#"}
+                      %i.fa.fa-user-circle.fa-3x
+                .media-body
+                  %h5.media-heading
+                    %a.title-color{:href => "#"} Sally Adams
+                  %p
+                    %a.text-color{:href => "#"} Ver
+                    %a.text-color{:href => "#"} Editar
+                    %a.text-danger{:href => "#"} Eliminar
+          .col-md-4.col-sm-6
+            .user-card#individual
+              .media
+                .media-left
+                  .avatar.avatar-lg.avatar-circle
+                    %a{:href => "#"}
+                      %i.fa.fa-user-circle.fa-3x
+                .media-body
+                  %h5.media-heading
+                    %a.title-color{:href => "#"} Jeffery Way
+                  %p
+                    %a.text-color{:href => "#"} Ver
+                    %a.text-color{:href => "#"} Editar
+                    %a.text-danger{:href => "#"} Eliminar
+          .col-md-4.col-sm-6
+            .user-card#individual
+              .media
+                .media-left
+                  .avatar.avatar-lg.avatar-circle
+                    %a{:href => "#"}
+                      %i.fa.fa-user-circle.fa-3x
+                .media-body
+                  %h5.media-heading
+                    %a.title-color{:href => "#"} Jane Doe
+                  %p
+                    %a.text-color{:href => "#"} Ver
+                    %a.text-color{:href => "#"} Editar
+                    %a.text-danger{:href => "#"} Eliminar
+          .col-md-4.col-sm-6
+            .user-card#individual
+              .media
+                .media-left
+                  .avatar.avatar-lg.avatar-circle
+                    %a{:href => "#"}
+                      %i.fa.fa-user-circle.fa-3x
+                .media-body
+                  %h5.media-heading
+                    %a.title-color{:href => "#"} Sandy Matt
+                  %p
+                    %a.text-color{:href => "#"} Ver
+                    %a.text-color{:href => "#"} Editar
+                    %a.text-danger{:href => "#"} Eliminar
+          .col-md-4.col-sm-6
+            .user-card#individual
+              .media
+                .media-left
+                  .avatar.avatar-lg.avatar-circle
+                    %a{:href => "#"}
+                      %i.fa.fa-user-circle.fa-3x
+                .media-body
+                  %h5.media-heading
+                    %a.title-color{:href => "#"} Sara Adams
+                  %p
+                    %a.text-color{:href => "#"} Ver
+                    %a.text-color{:href => "#"} Editar
+                    %a.text-danger{:href => "#"} Eliminar
+          .col-md-4.col-sm-6
+            .user-card#individual
+              .media
+                .media-left
+                  .avatar.avatar-lg.avatar-circle
+                    %a{:href => "#"}
+                      %i.fa.fa-user-circle.fa-3x
+                .media-body
+                  %h5.media-heading
+                    %a.title-color{:href => "#"} John Doe
+                  %p
+                    %a.text-color{:href => "#"} Ver
+                    %a.text-color{:href => "#"} Editar
+                    %a.text-danger{:href => "#"} Eliminar
+          .col-md-4.col-sm-6
+            .user-card#individual
+              .media
+                .media-left
+                  .avatar.avatar-lg.avatar-circle
+                    %a{:href => "#"}
+                      %i.fa.fa-user-circle.fa-3x
+                .media-body
+                  %h5.media-heading
+                    %a.title-color{:href => "#"} Jane Doe
+                  %p
+                    %a.text-color{:href => "#"} Ver
+                    %a.text-color{:href => "#"} Editar
+                    %a.text-danger{:href => "#"} Eliminar
+        .col-md-8
+          %nav.search-results-navigation
+          %ul.pagination.m-0
+            %li
+              %a{"aria-label" => "Previous", :href => "#"}
+                %span{"aria-hidden" => "true"}
+                  %i.fa.fa-chevron-left
+            %li
+              %a{:href => "#"} 1
+            %li
+              %a{:href => "#"} 2
+            %li
+              %a{:href => "#"} 3
+            %li
+              %a{:href => "#"} 4
+            %li
+              %a{:href => "#"} 5
+            %li
+              %a{"aria-label" => "Next", :href => "#"}
+                %span{"aria-hidden" => "true"}
+                  %i.fa.fa-chevron-right

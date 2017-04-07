@@ -7,7 +7,8 @@ class AuthorizeApiRequest
   # Service entry point - return valid user object
   def call
     {
-      user: user
+      user: user,
+      exp: Time.at(decoded_auth_token[:exp])
     }
   end
 
@@ -35,8 +36,8 @@ class AuthorizeApiRequest
 
   # check for token in `Authorization` header
   def http_auth_header
-    if headers['Authorization'].present?
-      return headers['Authorization'].split(' ').last
+    if headers['Bearer'].present?
+      return headers['Bearer'].split(' ').last
     end
       raise(ExceptionHandler::MissingToken, Message.missing_token)
   end

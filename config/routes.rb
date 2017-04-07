@@ -21,6 +21,7 @@ Rails.application.routes.draw do
 
 
   #Api Routes
+    match '*any' => 'base_api#options', :via => [:options]
     namespace "api" do
       namespace "v1" do
         resources :todos do

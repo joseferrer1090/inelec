@@ -37,10 +37,16 @@ module Api
           "message": "Missing token"
         }
 
+        @apiErrorExample {json} Error-Response:
+        HTTP/1.1 404 Not Found
+        {
+          "message":"Invalid token Couldn't find User with 'id'=1"
+        }
+
 =end
       # GET /todos
       def index
-        @todos = current_user.todos
+        @todos = current_user.as_json(:include => [ {:todos => { :include => :items }},:roles])
         json_response(@todos)
       end
 =begin

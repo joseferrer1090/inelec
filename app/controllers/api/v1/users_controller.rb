@@ -31,8 +31,10 @@ module Api
 
       def create
         user = User.create!(user_params)
+        role = Role.find_by(slug: 'client')
+        user.roles << role
         auth_token = AuthenticateUser.new(user.email, user.password).call
-        response = { message: Message.account_created, auth_token: auth_token }
+        response = { message: Message.account_created, auth: auth_token}
         json_response(response, :created)
       end
 

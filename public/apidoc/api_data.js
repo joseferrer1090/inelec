@@ -112,6 +112,11 @@ define({ "api": [
           "title": "Error-Response:",
           "content": "HTTP/1.1 422 Not Found\n{\n  \"message\": \"Missing token\"\n}",
           "type": "json"
+        },
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 404 Not Found\n{\n  \"message\":\"Invalid token Couldn't find User with 'id'=1\"\n}",
+          "type": "json"
         }
       ]
     },

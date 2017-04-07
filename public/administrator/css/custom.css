@@ -78,3 +78,20 @@ span.tags
     z-index: 10;
 }
 /* end */
+
+/* Custon button input file*/
+.btn-bs-file{
+    position: relative;
+}
+
+.btn-bs-file input[type="file"]{
+    position: absolute;
+    top: -9999999;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    width: 0;
+    height: 0;
+    outline: none;
+    cursor: pointer;
+}
+/* end */

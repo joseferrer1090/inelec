@@ -38,11 +38,53 @@
                           %p Cargo:
                           %a.btn.p-v-xl.btn-primary{:href => "#"} Agregar Imagen de Perfil
 
-                    .col-md-8{:style => "margin-left: 10px; width: 73%;"}
+                    .col-md-10{:style => "margin-left: 8px; width: 73%;"}
                       .widget
                         %header.widget-header
-                          %h4.widget-title Informacion del Usuario
-                        %hr.widget-separator
+                          %h4.widget-title Informacion Adicional de Usuario
+                        %hr.widget-separator/
                         .widget-body
-                          %form{:role => "form"}
+                          %form
+                            .m-b-lg
+                              %small lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem
+                            .form-group.col-sm-6
+                              %label{:for => "exampleInputEmail1"} Nombre
+                              %input#exampleInputEmail1.form-control{:type => "text"}/
+                            .form-group.col-sm-6
+                              %label{:for => "exampleInputPassword1"} Apellido
+                              %input#exampleInputPassword1.form-control{:type => "text"}/
+                            .form-group.col-sm-12
+                              %label{:for => "exampleInputFile"} Email
+                              %input#exampleInputFile.form-control{:type => "email"}/
+                            .form-group.col-sm-6
+                              %label{:for => ""} Contraseña
+                              %input{:type => "password", :class => "form-control"}
+                            .form-group.col-sm-6
+                              %label{:for => ""} Repetir Contraseñe
+                              %input{:type => "password", :class => "form-control"}
+                            .form-group.col-sm-6
+                              %label{:for => ""}
+                                Rol
+                                %span
+                                  %i.fa.fa-info-circle
+                              %select.form-control
+                                %option Administrador
+                                %option Vendedor
+                                %option Tecnico
+                                %option Cliente
+                                %option Secretaria
+                            .form-group.col-sm-6
+                              %label{:for => ""} Area de Trabajo
+                              %select.form-control
+                                %option Inelec SAS
+                                %option Agente Externo
+                            .form-group.col-sm-10.text-right
+                              %button.btn.btn-success{:type => "submit"}
+                                %i.fa.fa-check
+                                Registro
+                            %button.btn.btn-danger{:type => "reset"}
+                              %i.fa.fa-times
+                              Cancelar
+
+
 

@@ -8,7 +8,7 @@ class AuthorizeApiRequest
   def call
     {
       user: user,
-      exp: Time.at(decoded_auth_token[:exp])
+      exp: (Time.at(decoded_auth_token[:exp])-Time.now)
     }
   end
 

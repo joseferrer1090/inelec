@@ -29,6 +29,7 @@ Rails.application.routes.draw do
         end
         post 'auth/login', to: 'authentication#authenticate'
         post 'auth/signup', to: 'users#create'
+        get 'auth/user', to: 'authentication#show'
       end
     end
   #fin

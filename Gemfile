@@ -64,3 +64,5 @@ gem 'bcrypt', '~> 3.1.7'
 
 # Json web tocken
 gem 'jwt'
+
+gem 'rack-cors', :require => 'rack/cors'

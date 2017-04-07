@@ -30,6 +30,10 @@ module Api
         #response = {auth_token: auth_token, exp: exp, user: user }
         json_response({message: Message.login, auth: auth_token})
       end
+      def show
+        @user = @current_user.as_json(:include => [ {:todos => { :include => :items }},:roles])
+        json_response ({user: @user, exp: @exp})
+      end
 
       private
 

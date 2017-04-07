@@ -1,3 +1,19 @@
+:css
+  .btn-bs-file{
+    position: relative;
+  }
+
+  .btn-bs-file input[type="file"]{
+    position: absolute;
+     top: -9999999;
+     filter: alpha(opacity=0);
+     opacity: 0;
+     width: 0;
+     height: 0;
+     outline: none;
+     cursor: pointer;
+  }
+
 .promo
   .promo-body
     %form{:action => "#"}
@@ -36,7 +52,11 @@
                             %i.fa.fa-5x.fa-user-circle
                           %h4.m-b-md Nombre del Usuario
                           %p Cargo:
-                          %a.btn.p-v-xl.btn-primary{:href => "#"} Agregar Imagen de Perfil
+                          %p Empresa:
+                          %p Rol:
+                          %label{:class => "btn-bs-file btn btn-primary"}
+                            Agregar una Imagen
+                            %input{:type => "file"}
 
                     .col-md-10{:style => "margin-left: 8px; width: 73%;"}
                       .widget
@@ -85,6 +105,3 @@
                             %button.btn.btn-danger{:type => "reset"}
                               %i.fa.fa-times
                               Cancelar
-
-
-

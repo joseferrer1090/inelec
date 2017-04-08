@@ -1,91 +1,92 @@
-.promo
-  .promo-body
-    %form{:action => "#"}
-      .row
-        .col-xs-12.col-sm-8.col-md-offset-1
-          .form-group
-            %input{:type => "search", :class => "form-control promo-search-field", :placeholder => "Nombre del usuario"}
-        .col-xs-12.col-sm-2
-          %input{:type => "submit", :class => "btn btn-primary btn-block promo-search-submit", :value => "Buscar"}
-  .promo-footer
-    .row.no-gutter
-      .col-md-12
-        .widget
-          .m-b-lg.nav-tabs-horizontal
-            %ul.nav.nav-tabs{:role => "tablist", :style => "background: #F5F7F9 !important;"}
-              %li.active{:role => "presentation"}
-                %a{"aria-controls" => "tab-3", "data-toggle" => "tab", :href => "#tab-1", :role => "tab"} Usuarios
-              %li{:role => "presentation"}
-                %a{"aria-controls" => "tab-2", "data-toggle" => "tab", :href => "#tab-2", :role => "tab"} Agregar Usuario
-            .tab-content.p-md
-              #tab-1.tab-pane.in.active.fade{:role => "tabpanel"}
-                =render ('admin/partialsUsuarios/list-usuarios')
-                =render ('admin/partialsUsuarios/modal-ver')
-                =render ('admin/partialsUsuarios/modal-delete')
-              #tab-2.tab-pane.in.fade{:role => "tabpanel"}
-                .wrap
-                  .container
+.row.no-gutter
+  .col-md-12
+    .widget
+      .m-b-lg.nav-tabs-horizontal
+        %ul.nav.nav-tabs{:role => "tablist", :style => "background: #F5F7F9 !important;"}
+          %li.active{:role => "presentation"}
+            %a{"aria-controls" => "tab-3", "data-toggle" => "tab", :href => "#tab-1", :role => "tab"} Usuarios
+          %li{:role => "presentation"}
+            %a{"aria-controls" => "tab-2", "data-toggle" => "tab", :href => "#tab-2", :role => "tab"} Agregar Usuario
+        .tab-content.p-md
+          #tab-1.tab-pane.in.active.fade{:role => "tabpanel"}
+            .promo
+              .promo-body
+                %form{:action => "#"}
                   .row
-                    .col-md-3
-                      .widget
-                        %header.widget-header
-                          %h4.widget-title Perfil Usuario
-                        %hr.widget-separator/
-                        .widget-body.text-center
-                          .big-icon.m-b-md.watermark
-                            %i.fa.fa-5x.fa-user-circle
-                          %h4.m-b-md Nombre del Usuario
-                          %p Cargo:
-                          %p Empresa:
-                          %p Rol:
-                          %label{:class => "btn-bs-file btn btn-primary"}
-                            Agregar una Imagen
-                            %input{:type => "file"}
+                    .col-xs-12.col-sm-8.col-md-offset-1
+                      .form-group
+                        %input{:type => "search", :class => "form-control promo-search-field", :placeholder => "Nombre del usuario"}
+                    .col-xs-12.col-sm-2
+                      %input{:type => "submit", :class => "btn btn-primary btn-block promo-search-submit", :value => "Buscar"}
+              .promo-footer
 
-                    .col-md-10{:style => "margin-left: 8px; width: 73%;"}
-                      .widget
-                        %header.widget-header
-                          %h4.widget-title Informacion Adicional de Usuario
-                        %hr.widget-separator/
-                        .widget-body
-                          %form
-                            .m-b-lg
-                              %small lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem
-                            .form-group.col-sm-6
-                              %label{:for => "exampleInputEmail1"} Nombre
-                              %input#exampleInputEmail1.form-control{:type => "text"}/
-                            .form-group.col-sm-6
-                              %label{:for => "exampleInputPassword1"} Apellido
-                              %input#exampleInputPassword1.form-control{:type => "text"}/
-                            .form-group.col-sm-12
-                              %label{:for => "exampleInputFile"} Email
-                              %input#exampleInputFile.form-control{:type => "email"}/
-                            .form-group.col-sm-6
-                              %label{:for => ""} Contraseña
-                              %input{:type => "password", :class => "form-control"}
-                            .form-group.col-sm-6
-                              %label{:for => ""} Repetir Contraseñe
-                              %input{:type => "password", :class => "form-control"}
-                            .form-group.col-sm-6
-                              %label{:for => ""}
-                                Rol
-                                %span
-                                  %i.fa.fa-info-circle
-                              %select.form-control
-                                %option Administrador
-                                %option Vendedor
-                                %option Tecnico
-                                %option Cliente
-                                %option Secretaria
-                            .form-group.col-sm-6
-                              %label{:for => ""} Area de Trabajo
-                              %select.form-control
-                                %option Inelec SAS
-                                %option Agente Externo
-                            .form-group.col-sm-10.text-right
-                              %button.btn.btn-success{:type => "submit"}
-                                %i.fa.fa-check
-                                Registro
-                            %button.btn.btn-danger{:type => "reset"}
-                              %i.fa.fa-times
-                              Cancelar
+              =render ('admin/partialsUsuarios/list-usuarios')
+              =render ('admin/partialsUsuarios/modal-ver')
+              =render ('admin/partialsUsuarios/modal-delete')
+          #tab-2.tab-pane.in.fade{:role => "tabpanel"}
+            .wrap
+              .container
+              .row
+                .col-md-3
+                  .widget
+                    %header.widget-header
+                      %h4.widget-title Perfil Usuario
+                    %hr.widget-separator/
+                    .widget-body.text-center
+                      .big-icon.m-b-md.watermark
+                        %i.fa.fa-5x.fa-user-circle
+                      %h4.m-b-md Nombre del Usuario
+                      %p Cargo:
+                      %p Empresa:
+                      %p Rol:
+                      %label{:class => "btn-bs-file btn btn-primary"}
+                        Agregar una Imagen
+                        %input{:type => "file"}
+
+                .col-md-10{:style => "margin-left: 8px; width: 73%;"}
+                  .widget
+                    %header.widget-header
+                      %h4.widget-title Informacion Adicional de Usuario
+                    %hr.widget-separator/
+                    .widget-body
+                      %form
+                        .m-b-lg
+                          %small lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem
+                        .form-group.col-sm-6
+                          %label{:for => "exampleInputEmail1"} Nombre
+                          %input#exampleInputEmail1.form-control{:type => "text"}/
+                        .form-group.col-sm-6
+                          %label{:for => "exampleInputPassword1"} Apellido
+                          %input#exampleInputPassword1.form-control{:type => "text"}/
+                        .form-group.col-sm-12
+                          %label{:for => "exampleInputFile"} Email
+                          %input#exampleInputFile.form-control{:type => "email"}/
+                        .form-group.col-sm-6
+                          %label{:for => ""} Contraseña
+                          %input{:type => "password", :class => "form-control"}
+                        .form-group.col-sm-6
+                          %label{:for => ""} Repetir Contraseñe
+                          %input{:type => "password", :class => "form-control"}
+                        .form-group.col-sm-6
+                          %label{:for => ""}
+                            Rol
+                            %span
+                              %i.fa.fa-info-circle
+                          %select.form-control
+                            %option Administrador
+                            %option Vendedor
+                            %option Tecnico
+                            %option Cliente
+                            %option Secretaria
+                        .form-group.col-sm-6
+                          %label{:for => ""} Area de Trabajo
+                          %select.form-control
+                            %option Inelec SAS
+                            %option Agente Externo
+                        .form-group.col-sm-10.text-right
+                          %button.btn.btn-success{:type => "submit"}
+                            %i.fa.fa-check
+                            Registro
+                        %button.btn.btn-danger{:type => "reset"}
+                          %i.fa.fa-times
+                          Cancelar

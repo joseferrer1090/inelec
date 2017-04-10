@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170405195326) do
+ActiveRecord::Schema.define(version: 20170410165999) do
 
   create_table "items", force: :cascade do |t|
     t.string   "name"
@@ -33,6 +33,17 @@ ActiveRecord::Schema.define(version: 20170405195326) do
     t.integer "permission_id", null: false
     t.integer "role_id",       null: false
     t.index ["permission_id", "role_id"], name: "index_permissions_roles_on_permission_id_and_role_id"
+  end
+
+  create_table "phones", force: :cascade do |t|
+    t.string   "number"
+    t.string   "type_number"
+    t.boolean  "primary"
+    t.string   "country_code"
+    t.integer  "user_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.index ["user_id"], name: "index_phones_on_user_id"
   end
 
   create_table "roles", force: :cascade do |t|
@@ -69,8 +80,12 @@ ActiveRecord::Schema.define(version: 20170405195326) do
     t.string   "last_name"
     t.string   "email"
     t.string   "password_digest"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
   end
 
 end

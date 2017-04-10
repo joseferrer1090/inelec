@@ -21,15 +21,20 @@ Rails.application.routes.draw do
 
 
   #Api Routes
-    match '*any' => 'base_api#options', :via => [:options]
     namespace "api" do
       namespace "v1" do
-        resources :todos do
-          resources :items
+        namespace "auth" do
+          post 'login', to: 'authentication#authenticate'
+          post 'signup', to: 'authentication#create'
+          get 'user', to: 'authentication#show'
         end
-        post 'auth/login', to: 'authentication#authenticate'
-        post 'auth/signup', to: 'users#create'
-        get 'auth/user', to: 'authentication#show'
+
+        namespace "admin" do
+          resources :clients do
+            resources :companies
+            resources :phones
+          end
+        end
       end
     end
   #fin

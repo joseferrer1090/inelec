@@ -1,47 +1,42 @@
 [
   {
     "type": "post",
-    "url": "/todos",
-    "title": "Create todos",
-    "name": "createTodos",
-    "group": "Todos",
-    "success": {
+    "url": "/admin/clients",
+    "title": "Create client",
+    "name": "CreateClients",
+    "group": "Admin_clients",
+    "parameter": {
       "fields": {
-        "Success 200": [
+        "Parameter": [
           {
-            "group": "Success 200",
-            "type": "Int",
-            "optional": false,
-            "field": "id",
-            "description": "<p>id del titulo del grupo de tareas</p>"
-          },
-          {
-            "group": "Success 200",
+            "group": "Parameter",
             "type": "String",
             "optional": false,
-            "field": "title",
-            "description": "<p>Titulo del grupo de tareas</p>"
+            "field": "name",
+            "description": "<p>Nombre del usuario.</p>"
           },
           {
-            "group": "Success 200",
-            "type": "Date",
+            "group": "Parameter",
+            "type": "String",
             "optional": false,
-            "field": "created_at",
-            "description": "<p>id del propietario del grupo de tareas</p>"
+            "field": "password",
+            "description": "<p>Contraseña del usuario.</p>"
           },
           {
-            "group": "Success 200",
-            "type": "Date",
+            "group": "Parameter",
+            "type": "String",
             "optional": false,
-            "field": "updated_at",
-            "description": "<p>id del propietario del grupo de tareas</p>"
+            "field": "email",
+            "description": "<p>email del usuario.</p>"
           }
         ]
-      },
+      }
+    },
+    "success": {
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "HTTP/1.1 200 OK\n[\n  {\n    \"id\": 1,\n    \"title\": \"Tarea en el trabajo\",\n    \"created_by\": \"1\",\n    \"created_at\": \"2017-04-04T19:38:48.215Z\",\n    \"updated_at\": \"2017-04-04T19:38:48.215Z\"\n  },\n  {\n    \"id\": 2,\n    \"title\": \"Tareas en la casa\",\n    \"created_by\": \"1\",\n    \"created_at\": \"2017-04-04T19:39:01.603Z\",\n    \"updated_at\": \"2017-04-04T19:39:01.603Z\"\n  }\n]",
+          "content": "HTTP/1.1 200 OK\n{\n  \"id\": 8,\n  \"name\": \"Juan Ruiz\",\n  \"last_name\": null,\n  \"email\": \"juanmaca@hotmail.com\",\n  \"password_digest\": \"$2a$10$8tQ1Ui7WbjVWmK1mgD2sBuVccKtJ0GeaMeJNlGpPH2z/sJNpD40O2\",\n  \"created_at\": \"2017-04-10T16:17:17.855Z\",\n  \"updated_at\": \"2017-04-10T16:17:17.855Z\"\n}",
           "type": "json"
         }
       ]
@@ -50,58 +45,26 @@
       "examples": [
         {
           "title": "Error-Response:",
-          "content": "HTTP/1.1 422 Not Found\n{\n  \"message\": \"Missing token\"\n}",
+          "content": "HTTP/1.1 422 Not Found\n{\n    \"error\": \"UserNotFound\"\n}",
           "type": "json"
         }
       ]
     },
     "version": "0.0.0",
-    "filename": "app/controllers/api/v1/todos_controller.rb",
-    "groupTitle": "Todos"
+    "filename": "app/controllers/api/v1/admin/clients_controller.rb",
+    "groupTitle": "Admin_clients"
   },
   {
     "type": "get",
-    "url": "/todos",
-    "title": "List todos",
-    "name": "listTodos",
-    "group": "Todos",
+    "url": "/admin/clients",
+    "title": "Get clients",
+    "name": "getClients",
+    "group": "Admin_clients",
     "success": {
-      "fields": {
-        "Success 200": [
-          {
-            "group": "Success 200",
-            "type": "Int",
-            "optional": false,
-            "field": "id",
-            "description": "<p>id del titulo del grupo de tareas</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "String",
-            "optional": false,
-            "field": "title",
-            "description": "<p>Titulo del grupo de tareas</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "Date",
-            "optional": false,
-            "field": "created_at",
-            "description": "<p>id del propietario del grupo de tareas</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "Date",
-            "optional": false,
-            "field": "updated_at",
-            "description": "<p>id del propietario del grupo de tareas</p>"
-          }
-        ]
-      },
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "HTTP/1.1 200 OK\n[\n  {\n    \"id\": 1,\n    \"title\": \"Tarea en el trabajo\",\n    \"created_by\": \"1\",\n    \"created_at\": \"2017-04-04T19:38:48.215Z\",\n    \"updated_at\": \"2017-04-04T19:38:48.215Z\"\n  },\n  {\n    \"id\": 2,\n    \"title\": \"Tareas en la casa\",\n    \"created_by\": \"1\",\n    \"created_at\": \"2017-04-04T19:39:01.603Z\",\n    \"updated_at\": \"2017-04-04T19:39:01.603Z\"\n  }\n]",
+          "content": "HTTP/1.1 200 OK\n[\n  {\n    \"id\": 3,\n    \"name\": \"Erika\",\n    \"last_name\": \"De la Vega\",\n    \"email\": \"erikavega@gmail.com\",\n    \"password_digest\": \"$2a$10$33FTSsaVtMMZeIUahosZIO2N12yd.IeUc2EhZiaokE5wcKjlpfRIy\",\n    \"created_at\": \"2017-04-06T18:42:10.839Z\",\n    \"updated_at\": \"2017-04-06T18:42:10.839Z\"\n  },\n  {\n    \"id\": 4,\n    \"name\": \"Viviannys Diaz\",\n    \"last_name\": null,\n    \"email\": \"2arqwer1234z@gsafmailqwer.com\",\n    \"password_digest\": \"$2a$10$nSsv9QiYaLfKth71.N38Pef/ggjwlRNy989w9iw7IR504ecfAiYIG\",\n    \"created_at\": \"2017-04-10T15:22:57.622Z\",\n    \"updated_at\": \"2017-04-10T15:22:57.622Z\"\n  }\n]",
           "type": "json"
         }
       ]
@@ -110,26 +73,49 @@
       "examples": [
         {
           "title": "Error-Response:",
-          "content": "HTTP/1.1 422 Not Found\n{\n  \"message\": \"Missing token\"\n}",
-          "type": "json"
-        },
-        {
-          "title": "Error-Response:",
-          "content": "HTTP/1.1 404 Not Found\n{\n  \"message\":\"Invalid token Couldn't find User with 'id'=1\"\n}",
+          "content": "HTTP/1.1 422 Not Found\n{\n    \"error\": \"UserNotFound\"\n}",
           "type": "json"
         }
       ]
     },
     "version": "0.0.0",
-    "filename": "app/controllers/api/v1/todos_controller.rb",
-    "groupTitle": "Todos"
+    "filename": "app/controllers/api/v1/admin/clients_controller.rb",
+    "groupTitle": "Admin_clients"
+  },
+  {
+    "type": "get",
+    "url": "/auth/user",
+    "title": "Usuario logueado",
+    "name": "GetUser",
+    "group": "Auth",
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n  \"user\": {\n    \"id\": 6,\n    \"name\": \"Viviannys Diaz\",\n    \"last_name\": null,\n    \"email\": \"2arqweasdfadsfr1234z@sadfgsafmailqwer.com\",\n    \"password_digest\": \"$2a$10$gFKpJSYE6/HWvnEXHAA0X.EOOzlH2SFHQvsNVbYpw7ZhKKgvq4bei\",\n    \"created_at\": \"2017-04-10T15:34:26.710Z\",\n    \"updated_at\": \"2017-04-10T15:34:26.710Z\",\n    \"todos\": [],\n    \"roles\": [\n      {\n        \"id\": 3,\n        \"name\": \"Cliente de inelec\",\n        \"slug\": \"client\",\n        \"description\": \"Usuario capaz de pedir presupuestos\",\n        \"created_at\": \"2017-04-06T18:42:11.259Z\",\n        \"updated_at\": \"2017-04-06T18:42:11.259Z\"\n      }\n    ]\n  },\n  \"exp\": 1527.484673432\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 422 Not Found\n{\n    \"error\": \"UserNotFound\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "app/controllers/api/v1/auth/authentication_controller.rb",
+    "groupTitle": "Auth"
   },
   {
     "type": "post",
     "url": "/auth/login",
     "title": "Login User",
     "name": "loginUser",
-    "group": "User",
+    "group": "Auth",
     "parameter": {
       "fields": {
         "Parameter": [
@@ -165,7 +151,7 @@
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "HTTP/1.1 200 OK\n{\n    \"auth_token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1LCJleHAiOjE0OTE0MjY4Njh9.3W-lc2ytYjhddmV5xQYuJFQMZXM-4rYwz6cyxnHNr-4\"\n}",
+          "content": "HTTP/1.1 200 OK\n{\n  \"message\": \"Login successfully\",\n  \"auth\": {\n    \"token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozLCJleHAiOjE0OTE4NDA4NDV9.iQNyEKLUDKkdHrhkttkGfnOMtX1WM1BxpxfX1G5uzGQ\",\n    \"exp\": 1799,\n    \"user\": {\n      \"id\": 3,\n      \"name\": \"Erika\",\n      \"last_name\": \"De la Vega\",\n      \"email\": \"erikavega@gmail.com\",\n      \"password_digest\": \"$2a$10$33FTSsaVtMMZeIUahosZIO2N12yd.IeUc2EhZiaokE5wcKjlpfRIy\",\n      \"created_at\": \"2017-04-06T18:42:10.839Z\",\n      \"updated_at\": \"2017-04-06T18:42:10.839Z\",\n      \"todos\": [],\n      \"roles\": [\n        {\n          \"id\": 3,\n          \"name\": \"Cliente de inelec\",\n          \"slug\": \"client\",\n          \"description\": \"Usuario capaz de pedir presupuestos\",\n          \"created_at\": \"2017-04-06T18:42:11.259Z\",\n          \"updated_at\": \"2017-04-06T18:42:11.259Z\"\n        }\n      ]\n    },\n    \"type\": \"Bearer\"\n  }\n}",
           "type": "json"
         }
       ]
@@ -180,15 +166,15 @@
       ]
     },
     "version": "0.0.0",
-    "filename": "app/controllers/api/v1/authentication_controller.rb",
-    "groupTitle": "User"
+    "filename": "app/controllers/api/v1/auth/authentication_controller.rb",
+    "groupTitle": "Auth"
   },
   {
     "type": "post",
     "url": "/auth/signup",
     "title": "Signup User",
     "name": "signupUser",
-    "group": "User",
+    "group": "Auth",
     "parameter": {
       "fields": {
         "Parameter": [
@@ -238,7 +224,7 @@
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "HTTP/1.1 200 OK\n{\n    \"message\": \"Account created successfully\",\n    \"auth_token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1LCJleHAiOjE0OTE0MjY4Njh9.3W-lc2ytYjhddmV5xQYuJFQMZXM-4rYwz6cyxnHNr-4\"\n}",
+          "content": "HTTP/1.1 200 OK\n{\n  \"message\": \"Account created successfully\",\n  \"auth\": {\n    \"token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo2LCJleHAiOjE0OTE4NDAyNjd9.RIBUjcNndbZBQiys2JvJESQJLiBQ_NY4lk7veQBpuX0\",\n    \"type\": \"Bearer\"\n    \"exp\": 1799,\n    \"user\": {\n      \"id\": 6,\n      \"name\": \"Viviannys Diaz\",\n      \"last_name\": null,\n      \"email\": \"2arqweasdfadsfr1234z@sadfgsafmailqwer.com\",\n      \"password_digest\": \"$2a$10$gFKpJSYE6/HWvnEXHAA0X.EOOzlH2SFHQvsNVbYpw7ZhKKgvq4bei\",\n      \"created_at\": \"2017-04-10T15:34:26.710Z\",\n      \"updated_at\": \"2017-04-10T15:34:26.710Z\",\n      \"todos\": [],\n      \"roles\": [\n        {\n          \"id\": 3,\n          \"name\": \"Cliente de inelec\",\n          \"slug\": \"client\",\n          \"description\": \"Usuario capaz de pedir presupuestos\",\n          \"created_at\": \"2017-04-06T18:42:11.259Z\",\n          \"updated_at\": \"2017-04-06T18:42:11.259Z\"\n        }\n      ]\n    }\n  }\n}",
           "type": "json"
         }
       ]
@@ -253,7 +239,7 @@
       ]
     },
     "version": "0.0.0",
-    "filename": "app/controllers/api/v1/users_controller.rb",
-    "groupTitle": "User"
+    "filename": "app/controllers/api/v1/auth/authentication_controller.rb",
+    "groupTitle": "Auth"
   }
 ]

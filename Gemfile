@@ -66,3 +66,5 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'jwt'
 
 gem 'rack-cors', :require => 'rack/cors'
+
+gem "paperclip", "~> 5.0.0"

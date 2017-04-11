@@ -51,10 +51,10 @@ module Api
 =end
         # return auth token once user is authenticated
         def authenticate
-          auth_token = AuthenticateUser.new(auth_params[:email], auth_params[:password]).call
+          user = AuthenticateUser.new(auth_params[:email], auth_params[:password]).call
 
           #response = {auth_token: auth_token, exp: exp, user: user }
-          json_response({message: Message.login, auth: auth_token})
+          json_response({message: Message.login, auth: user})
         end
 =begin
         @api {get} /auth/user Usuario logueado
@@ -94,8 +94,9 @@ module Api
 
 =end
         def show
-          @user = @current_user.as_json(:include => [:roles])
-          json_response ({user: @user, exp: @exp, avatar: @current_user.avatar })
+          avatar = $base_url + @current_user.avatar.url
+          @user = @current_user.as_json(:include => [:roles]).merge("avatar" => avatar ).as_json
+          json_response ({user: @user, exp: @exp })
         end
 
 =begin
@@ -149,6 +150,8 @@ module Api
           user = User.create!(user_params)
           role = Role.find_by(slug: 'client')
           user.roles << role
+          user.avatar_url = $base_url + user.avatar.url
+          user.save
           auth_token = AuthenticateUser.new(user.email, user.password).call
           response = { message: Message.account_created, auth: auth_token}
           json_response(response, :created)

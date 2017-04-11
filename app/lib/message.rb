@@ -5,7 +5,7 @@ class Message
   end
 
   def self.invalid_credentials
-    'Invalid credentials'
+    'El email o la contraseña son invalidos'
   end
 
   def self.invalid_token
@@ -13,26 +13,26 @@ class Message
   end
 
   def self.missing_token
-    'Missing token'
+    'Falta el token en el request'
   end
 
   def self.unauthorized
-    'Unauthorized request'
+    'NUnauthorized request'
   end
 
   def self.account_created
-    'Account created successfully'
+    'Cuenta creada correctamente'
   end
 
   def self.login
-    'Login successfully'
+    'Ha iniciado sesion'
   end
 
   def self.account_not_created
-    'Account could not be created'
+    'La cuenta no pudo ser creada'
   end
 
   def self.expired_token
-    'Sorry, your token has expired. Please login to continue.'
+    'Lo sentimos, la session ha expirado. Inicie session para continuar.'
   end
 end

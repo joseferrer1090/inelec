@@ -34,6 +34,9 @@ Rails.application.routes.draw do
             resources :companies
             resources :phones
           end
+          resources :users do
+            resources :phones
+          end
         end
       end
     end

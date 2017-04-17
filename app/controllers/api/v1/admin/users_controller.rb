@@ -2,7 +2,7 @@ module Api
   module V1
     module Admin
       # app/controllers/users_controller.rb
-      class ClientsController < BaseApiController
+      class UsersController < BaseApiController
          before_action :set_client, only: [:show, :update, :destroy]
 =begin
         @api {post} /admin/clients Crear clientes
@@ -32,7 +32,7 @@ module Api
 =end
         def create
           user = User.create!(user_params)
-          role = Role.find_by(slug: 'client')
+          role = Role.where(slug: 'admin')
           user.roles << role
           user.avatar_url = $base_url + user.avatar.url
           user.save
@@ -45,7 +45,7 @@ module Api
 
         @apiSuccessExample Success-Response:
         HTTP/1.1 200 OK
-        [
+        [avatar
           {
             "id": 3,
             "name": "Erika",
@@ -72,8 +72,14 @@ module Api
         }
 =end
         def index
-          role = Role.find_by(slug: 'client')
-          json_response(role.users)
+          users = []
+          roles = Role.where.not(slug: 'client')
+          roles.each do |role|
+            role.users.each do |user|
+              users.push(user.as_json(:include => [:roles]))
+            end
+          end
+          json_response(users)
         end
 =begin
         @api {get} /admin/clients/:id Obtener el cliente por su id
@@ -99,7 +105,7 @@ module Api
 =end
         # GET /clients/:id
         def show
-         json_response(@client)
+         json_response(@user)
         end
 
 =begin
@@ -126,8 +132,8 @@ module Api
 =end
         # PUT /clients/:client_id
         def update
-          @client.update(user_params)
-          json_response(@client)
+          @user.update(user_params)
+          json_response(@user)
         end
 =begin
         @api {delete} /admin/clients/:id Eliminar el cliente por su id
@@ -153,8 +159,8 @@ module Api
 =end
         # DELETE /clients/:client_id/phones/:id
         def destroy
-          @client.destroy
-          json_response(@client)
+          @user.destroy
+          json_response(@user)
         end
 
         private
@@ -171,7 +177,7 @@ module Api
         end
 
         def set_client
-          @client = Role.find_by(slug: 'client').users.find(params[:id])
+          @user = User.find(params[:id])
         end
       end
     end

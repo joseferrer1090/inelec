@@ -43,6 +43,10 @@ user = User.find_by(name: 'David')
 role = Role.find_by(slug: 'superuser')
 user.roles << role
 
+user = User.find_by(name: 'Jonh')
+role = Role.find_by(slug: 'superuser')
+user.roles << role
+
 user = User.find_by(name: 'Erika')
 role = Role.find_by(slug: 'client')
 user.roles << role

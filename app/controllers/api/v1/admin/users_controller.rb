@@ -105,7 +105,7 @@ module Api
 =end
         # GET /clients/:id
         def show
-         json_response(@user)
+         json_response(@user.as_json(:include => [:roles]))
         end
 
 =begin
@@ -133,7 +133,7 @@ module Api
         # PUT /clients/:client_id
         def update
           @user.update(user_params)
-          json_response(@user)
+          json_response(@user.as_json(:include => [:roles]))
         end
 =begin
         @api {delete} /admin/clients/:id Eliminar el cliente por su id
@@ -172,7 +172,10 @@ module Api
             :email,
             :password,
             :password_confirmation,
-            :avatar
+            :avatar,
+            :identity,
+            :description,
+            :type_identity
           )
         end
 

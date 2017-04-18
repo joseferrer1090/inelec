@@ -81,6 +81,9 @@ ActiveRecord::Schema.define(version: 20170410165999) do
     t.string   "email"
     t.string   "password_digest"
     t.string   "avatar_url"
+    t.string   "identity"
+    t.string   "type_identity"
+    t.string   "description"
     t.datetime "created_at",          null: false
     t.datetime "updated_at",          null: false
     t.string   "avatar_file_name"

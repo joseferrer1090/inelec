@@ -131,12 +131,7 @@ module Api
         end
 =begin
         @api {delete} /admin/clients/:client_id/phones/:id eliminar el telefono por su id
-        @apiName deletePhoneClientById
-        @apiGroup PhoneClients
-
-        @apiSuccessExample Success-Response:
-        HTTP/1.1 200 OK
-        {
+        @apiName deletePhoneClientByIdclients
           "id": 1,
           "number": "158 156215",
           "type_number": "Casa",
@@ -166,7 +161,7 @@ module Api
         end
 
         def set_client
-          @client = User.find(params[:client_id])
+          @client = User.find(params[:client_id] || params[:user_id])
         end
 
         def set_client_phone

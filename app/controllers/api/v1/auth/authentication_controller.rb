@@ -66,7 +66,7 @@ module Api
         {
           "user": {
             "id": 6,
-            "name": "Viviannys Diaz",
+            "name": "Viviannys Diaz",:identity
             "last_name": null,
             "email": "2arqweasdfadsfr1234z@sadfgsafmailqwer.com",
             "password_digest": "$2a$10$gFKpJSYE6/HWvnEXHAA0X.EOOzlH2SFHQvsNVbYpw7ZhKKgvq4bei",
@@ -169,7 +169,10 @@ module Api
             :email,
             :password,
             :password_confirmation,
-            :avatar
+            :avatar,
+            :identity,
+            :description,
+            :type_identity
           )
         end
       end

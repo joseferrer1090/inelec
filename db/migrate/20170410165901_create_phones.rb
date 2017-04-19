@@ -5,7 +5,7 @@ class CreatePhones < ActiveRecord::Migration[5.0]
       t.string :type_number
       t.boolean :primary
       t.string :country_code
-      t.references :user, foreign_key: true
+      t.references :user
 
       t.timestamps
     end

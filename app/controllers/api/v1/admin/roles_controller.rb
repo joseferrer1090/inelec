@@ -2,8 +2,8 @@ module Api
   module V1
     module Admin
       # app/controllers/users_controller.rb
-      class UsersController < BaseApiController
-         before_action :set_client, only: [:show, :update, :destroy]
+      class RolesController < BaseApiController
+         before_action :set_role, only: [:show, :update, :destroy]
 =begin
         @api {post} /admin/clients Crear clientes
         @apiName CreateClients
@@ -31,12 +31,8 @@ module Api
         }
 =end
         def create
-          user = User.create!(user_params)
-          role = Role.where(slug: 'admin')
-          user.roles << role
-          user.avatar_url = $base_url + user.avatar.url(:medium)
-          user.save
-          json_response(user, :created)
+          role = Role.create!(role_params)
+          json_response(role, :created)
         end
 =begin
         @api {get} /admin/clients Obtener todos los clientes
@@ -72,14 +68,8 @@ module Api
         }
 =end
         def index
-          users = []
           roles = Role.where.not(slug: 'client')
-          roles.each do |role|
-            role.users.each do |user|
-              users.push(user.as_json(:include => [:roles]))
-            end
-          end
-          json_response(users)
+          json_response(roles)
         end
 =begin
         @api {get} /admin/clients/:id Obtener el cliente por su id
@@ -105,7 +95,7 @@ module Api
 =end
         # GET /clients/:id
         def show
-         json_response(@user.as_json(:include => [:roles]))
+         json_response(@role.as_json(:include => [:roles]))
         end
 
 =begin
@@ -132,10 +122,9 @@ module Api
 =end
         # PUT /clients/:client_id
         def update
-          @user.update(user_params)
-          @user.avatar_url = $base_url + @user.avatar.url(:medium)
-          @user.save
-          json_response(@user.as_json(:include => [:roles]))
+          @role.update(user_params)
+          user.avatar_url = $base_url + user.avatar.url(:medium)
+          json_response(@role.as_json(:include => [:roles]))
         end
 =begin
         @api {delete} /admin/clients/:id Eliminar el cliente por su id
@@ -161,28 +150,22 @@ module Api
 =end
         # DELETE /clients/:client_id/phones/:id
         def destroy
-          @user.destroy
-          json_response(@user)
+          @role.destroy
+          json_response(@role)
         end
 
         private
 
-        def user_params
+        def role_params
           params.permit(
             :name,
-            :last_name,
-            :email,
-            :password,
-            :password_confirmation,
-            :avatar,
-            :identity,
             :description,
-            :type_identity
+            :permissions
           )
         end
 
-        def set_client
-          @user = User.find(params[:id])
+        def set_role
+          @role = Role.find(params[:id])
         end
       end
     end

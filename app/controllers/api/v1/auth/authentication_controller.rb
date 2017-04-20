@@ -150,7 +150,7 @@ module Api
           user = User.create!(user_params)
           role = Role.find_by(slug: 'client')
           user.roles << role
-          user.avatar_url = $base_url + user.avatar.url
+          user.avatar_url = $base_url + user.avatar.url(:medium)
           user.save
           auth_token = AuthenticateUser.new(user.email, user.password).call
           response = { message: Message.account_created, auth: auth_token}

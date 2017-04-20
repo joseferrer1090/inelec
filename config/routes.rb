@@ -37,6 +37,7 @@ Rails.application.routes.draw do
           resources :users do
             resources :phones
           end
+          resources :roles
         end
       end
     end

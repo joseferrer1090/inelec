@@ -34,7 +34,7 @@ module Api
           user = User.create!(user_params)
           role = Role.find_by(slug: 'client')
           user.roles << role
-          user.avatar_url = $base_url + user.avatar.url
+          user.avatar_url = $base_url + user.avatar.url(:medium)
           user.save
           json_response(user, :created)
         end

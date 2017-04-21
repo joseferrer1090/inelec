@@ -38,6 +38,7 @@ Rails.application.routes.draw do
             resources :phones
           end
           resources :roles
+          resources :sections
         end
       end
     end

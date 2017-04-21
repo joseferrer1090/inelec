@@ -2,8 +2,8 @@ module Api
   module V1
     module Admin
       # app/controllers/users_controller.rb
-      class RolesController < BaseApiController
-         before_action :set_role, only: [:show, :update, :destroy]
+      class SectionsController < BaseApiController
+         before_action :set_section, only: [:show, :update, :destroy]
 =begin
         @api {post} /admin/clients Crear clientes
         @apiName CreateClients
@@ -31,8 +31,8 @@ module Api
         }
 =end
         def create
-          role = Role.create!(role_params)
-          json_response(role, :created)
+          section = Role.create!(section_params)
+          json_response(section, :created)
         end
 =begin
         @api {get} /admin/clients Obtener todos los clientes
@@ -68,8 +68,8 @@ module Api
         }
 =end
         def index
-          roles = Role.where.not(slug: 'client')
-          json_response(roles)
+          sections = Section.all
+          json_response(sections)
         end
 =begin
         @api {get} /admin/clients/:id Obtener el cliente por su id
@@ -95,7 +95,7 @@ module Api
 =end
         # GET /clients/:id
         def show
-         json_response(@role.as_json(:include => [:roles]))
+         json_response(@section.as_json(:include => [:sections]))
         end
 
 =begin
@@ -122,9 +122,9 @@ module Api
 =end
         # PUT /clients/:client_id
         def update
-          @role.update(user_params)
+          @section.update(user_params)
           user.avatar_url = $base_url + user.avatar.url(:medium)
-          json_response(@role.as_json(:include => [:roles]))
+          json_response(@section.as_json(:include => [:sections]))
         end
 =begin
         @api {delete} /admin/clients/:id Eliminar el cliente por su id
@@ -150,13 +150,13 @@ module Api
 =end
         # DELETE /clients/:client_id/phones/:id
         def destroy
-          @role.destroy
-          json_response(@role)
+          @section.destroy
+          json_response(@section)
         end
 
         private
 
-        def role_params
+        def section_params
           params.permit(
             :name,
             :slug,
@@ -165,8 +165,8 @@ module Api
           )
         end
 
-        def set_role
-          @role = Role.find(params[:id])
+        def set_section
+          @section = Role.find(params[:id])
         end
       end
     end

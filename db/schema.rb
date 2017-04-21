@@ -24,8 +24,10 @@ ActiveRecord::Schema.define(version: 20170410165999) do
   create_table "permissions", force: :cascade do |t|
     t.integer  "level"
     t.integer  "section_id"
+    t.integer  "role_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["role_id"], name: "index_permissions_on_role_id"
     t.index ["section_id"], name: "index_permissions_on_section_id"
   end
 

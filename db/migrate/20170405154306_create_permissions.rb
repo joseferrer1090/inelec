@@ -3,6 +3,7 @@ class CreatePermissions < ActiveRecord::Migration[5.0]
     create_table :permissions do |t|
       t.integer :level
       t.references :section
+      t.references :role
 
       t.timestamps
     end

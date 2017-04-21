@@ -39,6 +39,7 @@ Rails.application.routes.draw do
           end
           resources :roles
           resources :sections
+          resources :permissions
         end
       end
     end

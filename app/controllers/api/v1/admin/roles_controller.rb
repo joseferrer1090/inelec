@@ -31,8 +31,12 @@ module Api
         }
 =end
         def create
-          role = Role.create!(role_params)
-          json_response(role, :created)
+          @role = Role.create!(role_params)
+          permissions = params[:permissions]
+          permissions.each do |p|
+            @permission = @role.permissions.create!({ level: p[:level], section_id: p[:section] })
+          end
+          json_response(@role.as_json(:include => [:permissions]))
         end
 =begin
         @api {get} /admin/clients Obtener todos los clientes
@@ -69,7 +73,7 @@ module Api
 =end
         def index
           roles = Role.where.not(slug: 'client')
-          json_response(roles)
+          json_response(roles.as_json(:include => [:permissions]))
         end
 =begin
         @api {get} /admin/clients/:id Obtener el cliente por su id
@@ -160,8 +164,14 @@ module Api
           params.permit(
             :name,
             :slug,
-            :description,
-            :permissions
+            :description
+          )
+        end
+
+        def permissions_params
+          params.permit(
+            :level,
+            :section
           )
         end
 

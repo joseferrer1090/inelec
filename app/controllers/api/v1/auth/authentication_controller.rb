@@ -95,7 +95,7 @@ module Api
 =end
         def show
           avatar = $base_url + @current_user.avatar.url
-          @user = @current_user.as_json(:include => [:roles]).merge("avatar" => avatar ).as_json
+          @user = @current_user.as_json(:include => { :roles => { :include => :permissions } }).merge("avatar" => avatar ).as_json
           json_response ({user: @user, exp: @exp })
         end
 

@@ -25,7 +25,7 @@ class AuthenticateUser
     token = JsonWebToken.encode(user_id: user.id) if user
     exp = JsonWebToken.decode(token)[:exp]
     avatar = $base_url + user.avatar.url
-    @user = user.as_json(:include => [:roles]).merge("avatar" => avatar ).as_json
+    @user = user.as_json(:include => { :roles => { :include => :permissions } }).merge("avatar" => avatar ).as_json
     return {token: token,exp: (Time.at(exp)-Time.now).to_i, user: @user, type: 'Bearer'}
   end
 end

@@ -39,10 +39,20 @@ roles_list.each do |slug, name, description|
   Role.create( name: name, slug: slug, description: description )
 end
 role = Role.find_by(slug: 'superuser')
+
 sections = Section.all
 sections.each do |s|
   role.permissions.create!({ level: 4, section_id: s.id })
 end
+
+role = Role.find_by(slug: 'admin')
+
+sections = Section.all
+sections.each do |s|
+  role.permissions.create!({ level: 3, section_id: s.id })
+end
+
+role = Role.find_by(slug: 'superuser')
 
 user = User.find_by(name: 'David')
 role = Role.find_by(slug: 'superuser')

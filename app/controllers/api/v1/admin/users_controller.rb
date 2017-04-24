@@ -32,7 +32,7 @@ module Api
 =end
         def create
           user = User.create!(user_params)
-          role = Role.where(slug: 'admin')
+          role = Role.find(params[:role_id])
           user.roles << role
           user.avatar_url = $base_url + user.avatar.url(:medium)
           user.save
@@ -105,7 +105,7 @@ module Api
 =end
         # GET /clients/:id
         def show
-         json_response(@user.as_json(:include => [:roles]))
+         json_response(@user.as_json(:include => { :roles => { :include => :permissions } }))
         end
 
 =begin
@@ -135,7 +135,7 @@ module Api
           @user.update(user_params)
           @user.avatar_url = $base_url + @user.avatar.url(:medium)
           @user.save
-          json_response(@user.as_json(:include => [:roles]))
+          json_response(@user.as_json(:include => { :roles => { :include => :permissions } }))
         end
 =begin
         @api {delete} /admin/clients/:id Eliminar el cliente por su id

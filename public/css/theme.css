@@ -1,8 +1,8 @@
 /*
     Template Name: NEon- event template
     Author: Themeturn
-    Author URI: 
-    Description: 
+    Author URI:
+    Description:
     Version: 1.0
 */
 
@@ -63,12 +63,15 @@ input[type="search"] {
  * ---------------------------------------------------------
  */
 
+
+
 body {
 	width: 100%;
 	height: 100%;
 	line-height: 24px;
 	color: #6a6a6a;
 	font-weight: normal;
+	cursor: default;
 }
 
 html {
@@ -704,6 +707,7 @@ center
 #section-conference {
 	position: relative;
 	background: #2067B2;
+	padding: 10px;
 }
 
 .header-title {
@@ -1184,6 +1188,7 @@ center
 
 .info-block h4 {
 	margin-bottom: 5px;
+	padding-top: 10px!important;
 }
 
 .info-block p {
@@ -1269,7 +1274,6 @@ center
 }
 
 .footer-content h4 {
-	margin: 0px 0px;
 	font-weight: 400;
 	text-transform: capitalize;
 }
@@ -1285,4 +1289,21 @@ center
 	margin-top: 15px;
 	display: inline-block;
 	font-weight: 700;
+}
+
+img.bigger-class {
+ width: 100%;
+}
+
+.about-block {
+	background-color: #f9f9f9;
+	min-height: 480px;
+}
+
+.products {
+	min-height: 100px;
+}
+
+.politica {
+	float: right;
 }

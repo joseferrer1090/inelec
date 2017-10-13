@@ -29,6 +29,7 @@
 }
 .carousel-caption h3 {
     padding: .6em;
+    cursor: default;
 }
 .carousel .icon-container {
     display: inline-block;

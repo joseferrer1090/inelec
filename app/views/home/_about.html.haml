@@ -1,36 +1,50 @@
 %section#section-nosotros.section-padding
   .container
     .row
-      .col-md-4.col-sm-4.col-lg-4
-        .about-block
-          = image_tag('about/about-img1.jpg', class:'img-responsive')
-          .about-info
-            %h3 Potencia
-            %p{:style => "text-align: justify !important;"} Soluciones de Ingeniería para sistemas de arranque y control de motores eléctricos y procesos industriales asociados, en baja y media tensión.
-            %a.read-more{:href => "#"} + Mas
-      .col-md-4.col-sm-4.col-lg-4
-        .about-block
-          = image_tag('about/about-img2.jpg', class:'img-responsive')
-          /%img.img-responsive{:alt => "", :src => "assets/img/about/about-img1.jpg"}/
-          .about-info
-            %h3 Seguridad
-            %p{:style => "text-align: justify !important;"} Nuestras Cámaras Térmicas para protección interna y externa de instalaciones y facilidades industriales, brindan una solución efectiva a las dificultades de visibilidad diurna y nocturna.
-            %a.read-more{:href => "#"} + Mas
-      .col-md-4.col-sm-4.col-lg-4
-        .about-block
-          = image_tag('about/about-img4.jpg', class:'img-responsive')
-          /%img.img-responsive{:alt => "", :src => "assets/img/about/about-img4.jpg"}/
-          .about-info
-            %h3 Servicio
-            %p{:style => "text-align: justify !important;"} Serivicios de precomisionamiento y comisionamiento de Arrancadores suaves en baja y media tensión.
-            %a.read-more{:href => "#"} + Mas
+      .col-md-4.col-sm-12.col-lg-4
+        %a{:href => "/potencia"}
+          .about-block
+            %img.img-responsive{:src => "image/motor.png", :alt => "", :class => "img-responsive", :style => "height: 360px;width: 100%;"}/
+            .about-info
+              %h3{:style => "text-align: center !important;"} SISTEMAS DE POTENCIA Y CONTROL DE MOTORES
+      .col-md-4.col-sm-12.col-lg-4
+        %a{:href => "/seguridad"}
+          .about-block
+            %img.img-responsive{:src => "image/seguridad.png", :alt => "", :class => "img-responsive", :style => "height: 360px;"}/
+            /%img.img-responsive{:alt => "", :src => "assets/img/about/about-img1.jpg"}/
+            .about-info
+              %h3{:style => "text-align: center !important;margin-top: 40px;"} SISTEMAS DE SEGURIDAD
+      .col-md-4.col-sm-12.col-lg-4
+        %a{:href => "/agitacion"}
+          .about-block
+            %img.img-responsive{:src => "image/chemical.png", :alt => "", :class => "img-responsive", :style => "height: 360px;width: 100%;"}/
+            /%img.img-responsive{:alt => "", :src => "assets/img/about/about-img4.jpg"}/
+            .about-info
+              %h3{:style => "text-align: center !important;"} SISTEMAS DE AGITACIÓN Y MEZCLA
+  %section#section-nosotros.section-padding
+    .container
+      .row
+        .col-md-2
+        .col-md-4.col-sm-12.col-lg-4
+          %a{:href => "/software"}
+            .about-block
+              %img.img-responsive{:src => "image/software.png", :alt => "", :class => "img-responsive", :style => "height: 360px;width: 100%;"}/
+              .about-info
+                %h3{:style => "text-align: center !important;"} SISTEMAS DE SOFTWARES ELECTRICOS
+        .col-md-4.col-sm-12.col-lg-4
+          %a{:href => "/servicios"}
+            .about-block
+              %img.img-responsive{:src => "image/service.png", :alt => "", :class => "img-responsive", :style => "height: 360px;width: 100%;"}/
+              /%img.img-responsive{:alt => "", :src => "assets/img/about/about-img1.jpg"}/
+              .about-info
+                %h3{:style => "text-align: center !important;margin-top: 40px;"} SERVICIOS
   .container
     .about-desc
       .row
         .col-md-9.col-sm-7.hidden-sm
           .about-intro
-            %h4.timetitle Marzo 2017
-            %h2 Consulta o agenta una cita con nuestros Expertos.
+            %h4.timetitle Octubre 2017
+            %h2 Consulta o agenda una cita con nuestros expertos.
         .col-md-3.col-sm-5
           %br
           .about-btn
@@ -38,16 +52,16 @@
 %section#section-conference.section-padding
   .container
     .row
-      .col-md-3.col-sm-6.col-xs-12
-        .about-box
-          %i.icon.icon-mic
-      .col-md-3.col-sm-6.col-xs-12
-        .about-box
-          %i.icon.icon-mic
-      .col-md-3.col-sm-6.col-xs-12
-        .about-box
-          %i.icon.icon-mic
-      .col-md-3.col-sm-6.col-xs-12
-        .about-box
-          %i.icon.icon-mic
+      .col-md-4.col-sm-4.col-xs-4
+        %a{:href => "http://www.facebook.com/", "target" => "_blank"}
+          .about-box
+            %i.fa.fa-facebook
+      .col-md-4.col-sm-4.col-xs-4
+        %a{:href => "http://www.twitter.com/", "target" => "_blank"}
+          .about-box
+            %i.fa.fa-twitter
+      .col-md-4.col-sm-4.col-xs-4
+        %a{:href => "http://www.linkedin.com/", "target" => "_blank"}
+          .about-box
+            %i.fa.fa-linkedin
 =render('modal_consult')

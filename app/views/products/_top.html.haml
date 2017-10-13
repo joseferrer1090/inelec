@@ -5,23 +5,20 @@
         .navbar-header
           %button.navbar-toggle{"data-target" => ".navbar-main-collapse", "data-toggle" => "collapse", :type => "button"}
             %i.fa.fa-bars
-          %a.navbar-brand.page-scroll{:href => "#page-top"}
-            =image_tag('logo/logo.png', class:'img-responsive', :style => "width: 45%;")
+          %a.navbar-brand.page-scroll{:href => "/"}
+            %img.img-responsive{:src => "image/logo.png", :alt => "", :class => "img-responsive", :style => "width: 55%;"}/
 
         .collapse.navbar-collapse.navbar-main-collapse.navbar-right
           %ul.nav.navbar-nav
             %li.active
-              %a.page-scroll{:href => "#main-banner"} Inicio
+              %a.page-scroll{:href => "/"} Inicio
             %li
-              %a.page-scroll{:href => "#section-nosotros"} Nosotros
+              %a.page-scroll{:href => "#section-nosotros"} Productos
             %li
-              %a.page-scroll{:href => "#section-team"} Inelec
+              %a.page-scroll{:href => "#section-team"} Nosotros
             %li
-              %a.page-scroll{:href => "#section-gallery"} Catálogo
-            %li
-              %a.page-scroll{:href => "#section-contact"} Contactenos
+              %a.page-scroll{:href => "#section-contact"} Contáctenos
             %li
               %a{:href => "/auth/login"} Login
           .navbar-btn.navbar-right
             %a.page-scroll.btn.btn-feature.navbar-link{:href => "#section-contact"} +57 (1) 622 7304
-

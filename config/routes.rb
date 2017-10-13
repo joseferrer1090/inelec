@@ -4,6 +4,12 @@ Rails.application.routes.draw do
   root to:'home#index'
 
   get '/about', :to => 'home#about', as:'about'
+  get '/potencia', :to => 'products#potencia', as:'potencia'
+  get '/agitacion', :to => 'products#agitacion', as:'agitacion'
+  get '/seguridad', :to => 'products#seguridad', as:'seguridad'
+  get '/software', :to => 'products#software', as:'software'
+  get '/servicios', :to => 'products#servicios', as:'servicios'
+  get '/agitacion/philadelphia', :to => 'products#philadelphia', as:'philadelphia'
 
   #Routes NameSpace Login
     namespace "auth" do

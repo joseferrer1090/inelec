@@ -1,5 +1,7 @@
 class ProductsController < ApplicationController
 
+  layout 'products/products'
+
   def index
   end
   def agitacion

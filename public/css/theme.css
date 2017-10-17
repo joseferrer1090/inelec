@@ -1298,6 +1298,10 @@ img.bigger-class {
 .about-block {
 	background-color: #f9f9f9;
 	min-height: 480px;
+	border-radius: 5%;
+	-webkit-box-shadow: 10px 10px 5px -1px rgba(204,204,204,1);
+	-moz-box-shadow: 10px 10px 5px -1px rgba(204,204,204,1);
+	box-shadow: 10px 10px 5px -1px rgba(204,204,204,1);
 }
 
 .products {
@@ -1306,4 +1310,14 @@ img.bigger-class {
 
 .politica {
 	float: right;
+}
+
+.atras {
+	padding: 15px!important;
+	margin: 14px;
+}
+
+.google {
+	border-top-left-radius: 5%;
+	border-top-right-radius: 5%;
 }

@@ -1,6 +1,6 @@
 .about-block:hover,
 .products:hover {
-  opacity: 0.7;
+  opacity: 0.8;
   -webkit-transition: all .3s ease 0s;
   -o-transition: all .3s ease 0s;
   transition: all .3s ease 0s;

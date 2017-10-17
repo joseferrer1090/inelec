@@ -14,6 +14,8 @@ class ProductsController < ApplicationController
   end
   def software
   end
+  def philadelphia
+  end
 
 
 end
